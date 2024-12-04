@@ -62,3 +62,17 @@
 }
 }
 
+.body-section{
+    padding: 5rem;
+    .heading{
+        text-align: center;
+    }
+    .card-group{
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem 15rem;
+    }
+}
+
+

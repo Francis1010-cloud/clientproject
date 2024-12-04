@@ -1,0 +1,12 @@
+.card-container{
+    border: 1px solid blue;
+    padding: 2rem;
+    .card-header{
+        display: flex;
+        justify-content: space-between;
+    }
+    p{
+        line-height: 1.8rem;
+        font-size: 17px;
+    }
+}

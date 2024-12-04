@@ -1,5 +1,6 @@
 
 
+import CardComponent from '../CommonComponents/CardComponent';
 import './LandingPage.scss';
 
 export default function LandingPage() {
@@ -13,7 +14,13 @@ export default function LandingPage() {
     const headerCompanyList = [
         {image:"Image",details:"Hexnode is listed as a leader and a major player in IDC MarketScape UEM Vendors Assessment Reports 2024."},
         {image:"Image",details:"Hexnode mentioned as a Notable Vendor in Midmarket Context: Magic Quadrant for Unified Endpoint Management tools 2022."},
-        {image:"Image",details:"Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023."}]
+        {image:"Image",details:"Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023."}];
+    
+    const cardDetails = [
+        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
+        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
+        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
+        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}]
 
 const HeaderSection = () =>{
 
@@ -75,7 +82,19 @@ const BodySection = () =>{
     try {
         return(<>
         <div className='body-section'>
-            <div>Why Hexnode?</div>
+            <div className='heading'>Why Hexnode?</div>
+            <div>Center</div>
+            <div className="card-group">
+            {cardDetails.map((item:any)=>(<>
+            {/* <div>Center Div</div> */}
+            <CardComponent 
+                   Icon = {item.icon}
+                   Title = {item.title}
+                   Content = {item.content}
+                  />
+                            
+            </>))}            
+            </div>
         </div>
         </>)
     } catch (error) {
