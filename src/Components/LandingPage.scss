@@ -64,6 +64,8 @@
 
 .body-section{
     padding: 5rem;
+    position: relative;
+    background: rgb(247 247 247/1);
     .heading{
         text-align: center;
     }
@@ -72,6 +74,12 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 5rem 15rem;
+    }
+    .center-div{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 }
 

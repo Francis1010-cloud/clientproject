@@ -81,12 +81,11 @@ const HeaderSection = () =>{
 const BodySection = () =>{
     try {
         return(<>
-        <div className='body-section'>
-            <div className='heading'>Why Hexnode?</div>
-            <div>Center</div>
+        <div className="body-section">
+            <div className="heading">Why Hexnode?</div>
+            <div className="center-div"><img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/></div>
             <div className="card-group">
             {cardDetails.map((item:any)=>(<>
-            {/* <div>Center Div</div> */}
             <CardComponent 
                    Icon = {item.icon}
                    Title = {item.title}
@@ -102,8 +101,21 @@ const BodySection = () =>{
     }
 }
 
+const FeatureSection = () =>{
+    try {
+        return(<>
+        <div>
+            Feature Section
+        </div>
+        </>)
+    } catch (error) {
+        
+    }
+}
+ 
 return(<>
     {HeaderSection()}
     {BodySection()}
+    {FeatureSection()}
 </>)
 }

@@ -13,7 +13,7 @@ const CardDesign = () =>{
         <div className="card-container">
         <div className='card-header'>
             <div>
-                <img src="./images/sample.svg"/>
+                <img src="./images/sample.svg" alt="sampleimage"/>
             </div>
             <div>      
                 <h3>{Title}</h3> 
@@ -23,6 +23,7 @@ const CardDesign = () =>{
                    <p>
                    {Content}
                    </p>
+                   <p className="hover-text">Try Hexnode on your endpoints</p>
         </div>
         
         </>)
