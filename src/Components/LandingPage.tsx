@@ -1,6 +1,7 @@
 
 
 import CardComponent from '../CommonComponents/CardComponent';
+import FeatureCardComponent from '../CommonComponents/FeatureCardComponent';
 import './LandingPage.scss';
 
 export default function LandingPage() {
@@ -17,10 +18,18 @@ export default function LandingPage() {
         {image:"Image",details:"Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023."}];
     
     const cardDetails = [
-        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
-        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
-        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
-        {icon:"icon",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}]
+        {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
+        {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
+        {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
+        {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}]
+
+
+    const featureDetails = [{icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},{icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."}
+    ]
 
 const HeaderSection = () =>{
 
@@ -82,7 +91,7 @@ const BodySection = () =>{
     try {
         return(<>
         <div className="body-section">
-            <div className="heading">Why Hexnode?</div>
+            <div className="heading font-bold">Why Hexnode?</div>
             <div className="center-div"><img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/></div>
             <div className="card-group">
             {cardDetails.map((item:any)=>(<>
@@ -104,8 +113,21 @@ const BodySection = () =>{
 const FeatureSection = () =>{
     try {
         return(<>
-        <div>
-            Feature Section
+        <div className="feature-section">
+            <div className="heading font-bold">
+                Powerful endpoint management, built for the devices you choose
+            </div>
+            <div className='feature-details-card'>
+            {featureDetails.map((item:any)=>(<>
+                <FeatureCardComponent
+             Icon = {item.icon}
+             Title = {item.title}
+             Content = {item.content}/>
+            </>))}
+            </div>
+          
+    
+            
         </div>
         </>)
     } catch (error) {

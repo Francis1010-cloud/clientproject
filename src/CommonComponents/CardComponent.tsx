@@ -13,7 +13,7 @@ const CardDesign = () =>{
         <div className="card-container">
         <div className='card-header'>
             <div>
-                <img src="./images/sample.svg" alt="sampleimage"/>
+                <img src={Icon} alt="sampleimage"/>
             </div>
             <div>      
                 <h3>{Title}</h3> 
