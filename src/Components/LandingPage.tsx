@@ -1,11 +1,15 @@
 
 
+import { useState } from 'react';
 import CardComponent from '../CommonComponents/CardComponent';
 import FeatureCardComponent from '../CommonComponents/FeatureCardComponent';
 import UserCardCompnent from '../CommonComponents/UserCardComponent';
 import './LandingPage.scss';
 
 export default function LandingPage() {
+
+    const [selectedPlatformIndex,setSelectedPlatformIndex] = useState(0);
+
 
     const navbarContent = [
                     "Why Hexnode",
@@ -30,7 +34,7 @@ export default function LandingPage() {
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}]
     
         const platformDetails = [
-            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
+            {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90", icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
             {icon:"",title:"iOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
             {icon:"",title:"macOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
             {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
@@ -44,6 +48,7 @@ export default function LandingPage() {
         {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
         {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."}
     ]
+
 
 const HeaderSection = () =>{
 
@@ -178,8 +183,6 @@ const MultiPlatformSection = () =>{
     width="100%" 
     height="auto" 
     decoding="async" 
-    srcSet=" https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=640&q=90 1x,
-  https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90 2x" 
     src="https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90" 
     ></img>
    
@@ -189,14 +192,14 @@ const MultiPlatformSection = () =>{
                 <div className='platform-card-container'>
                 
                 {platformDetails.map((item:any,index:number)=>(<>
-                {index == 1 ?  <>
+                {index == selectedPlatformIndex ?  <>
                     <CardComponent 
                    Icon = {item.icon}
                    Title = {item.title}
                    Content = {item.content}
                   />
                 </>  : <>
-                <div style={{marginInline:"1rem"}}>
+                <div style={{marginInline:"1rem",cursor:"pointer"}} onClick={()=>setSelectedPlatformIndex(index)}>
                     <h3 style={{fontSize:"24px"}}>{item.title}</h3>
                     <div className="horizontal-line"></div>
                     </div>
