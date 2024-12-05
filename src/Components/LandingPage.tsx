@@ -186,11 +186,13 @@ const BodySection = () =>{
             {/* {cardDetails.map((item:any,index)=>(<> */}
             <div style={{display:"flex",flexFlow:"column",rowGap:"5rem"}}>
             <CardComponent 
+                  classname = "card-container"
                    Icon = {"/images/sample.svg"}
                    Title = {"Adapt to the new normal"}
                    Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
                   /> 
                   <CardComponent 
+                   classname = "card-container"
                    Icon = {"/images/tick-icon.svg"}
                    Title = {"Zero compromise security"}
                    Content = {"Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises."}
@@ -199,11 +201,13 @@ const BodySection = () =>{
                 
                   <div style={{display:"flex",flexFlow:"column",rowGap:"5rem"}}>
                   <CardComponent 
+                   classname = "card-container"
                    Icon = {"/images/play-setting-icon.svg"}
                    Title = {"Get more done with automation"}
                    Content = {"Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes."}
                   /> 
                   <CardComponent 
+                   classname = "card-container"
                    Icon = {"/images/file-correct-icon.svg"}
                    Title = {"Unified Policy Management"}
                    Content = {"Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achive single pane of glass management with Hexnode."}
@@ -271,6 +275,7 @@ const MultiPlatformSection = () =>{
                 {platformDetails.map((item:any,index:number)=>(<>
                 {index == selectedPlatformIndex ?  <>
                     <CardComponent 
+                    classname="alternate-card-container"
                    Icon = {item.icon}
                    Title = {item.title}
                    Content = {item.content}

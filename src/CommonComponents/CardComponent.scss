@@ -18,6 +18,24 @@
     }
 }
 
+.alternate-card-container{
+    border: 1px solid rgb(215 215 215/1);
+    padding: 1rem;
+    border-radius: 15px;
+    .card-header{
+        display: flex;
+       align-items: center;   
+    }
+    p{
+        line-height: 1.8rem;
+        font-size: 17px;
+        opacity: 0.8;
+    }
+    .hover-text{
+        color: red;
+    }
+}
+
 .card-container:hover{
     .hover-text{
         display: block;

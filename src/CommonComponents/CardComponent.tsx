@@ -3,14 +3,14 @@ import './CardComponent.scss';
 
 
 
-export default function CardComponent({Icon,Title,Content}:any) {
+export default function CardComponent({Icon,Title,Content,classname}:any) {
 
 
 
 const CardDesign = () =>{
     try {
         return(<>
-        <div className="card-container">
+        <div className={classname}>
         <div className='card-header'>
             {Icon && <div >
                 <img src={Icon} alt="sampleimage"/>
