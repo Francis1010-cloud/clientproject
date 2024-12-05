@@ -5,6 +5,7 @@ import CardComponent from '../CommonComponents/CardComponent';
 import FeatureCardComponent from '../CommonComponents/FeatureCardComponent';
 import UserCardCompnent from '../CommonComponents/UserCardComponent';
 import './LandingPage.scss';
+import { MenuOutlined } from '@ant-design/icons';
 
 export default function LandingPage() {
 
@@ -70,10 +71,8 @@ useEffect(()=>{
 
 const handleScroll = () => {
     let element:any = document.getElementById("header");
-    console.log(element);
     let navelement:any = element.getElementsByClassName("nav-bar");
-  let atagElement = navelement[0].getElementsByTagName("a");
-    console.log(navelement);
+    let atagElement = navelement[0].getElementsByTagName("a");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       element.style.background="white";
     //   element.style.color="black";
@@ -119,6 +118,9 @@ const HeaderSection = () =>{
                 <div className='trail-button'>
                         14 DAY FREE TRAIL
                 </div>
+                <div className="menu-icon">
+                  <MenuOutlined />
+                </div>
             </div>
             <div className='header-content'>
                 <div className='header-details'>
@@ -144,10 +146,11 @@ const HeaderSection = () =>{
     srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=640&q=90 1x, https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90 2x" 
     src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90"
 />
+Image
 
                 </div>
             </div>
-            <div className='header-company-details'> 
+            {/* <div className='header-company-details'> 
                     {headerCompanyList.map((item:any,index)=>(<>
                     <div>
                     <img alt="IDC" src={item.src} width={item.width} height={item.height} loading="lazy" />
@@ -160,7 +163,7 @@ const HeaderSection = () =>{
                     </> }
                    
                     </>))}
-            </div>
+            </div> */}
 
             </div>
             
@@ -179,49 +182,52 @@ const BodySection = () =>{
         return(<>
         <div className="body-section">
             <div className="heading font-bold">Why Hexnode?</div>
-            <div className="center-div">
+            {/* <div className="center-div">
                 <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
-            </div>
-            <div className='card-group'>
-            {/* {cardDetails.map((item:any,index)=>(<> */}
-            <div style={{display:"flex",flexFlow:"column",rowGap:"5rem"}}>
+            </div> */}
+            {/* <div className='card-group'> */}
+                        <div className="row">
+            <div className="column">
             <CardComponent 
                   classname = "card-container"
                    Icon = {"/images/sample.svg"}
                    Title = {"Adapt to the new normal"}
                    Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
-                  /> 
-                  <CardComponent 
-                   classname = "card-container"
-                   Icon = {"/images/tick-icon.svg"}
-                   Title = {"Zero compromise security"}
-                   Content = {"Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises."}
-                  /> 
+                  />
+                   <CardComponent 
+                  classname = "card-container"
+                   Icon = {"/images/sample.svg"}
+                   Title = {"Adapt to the new normal"}
+                   Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
+                  />
             </div>
-                
-                  <div style={{display:"flex",flexFlow:"column",rowGap:"5rem"}}>
-                  <CardComponent 
-                   classname = "card-container"
-                   Icon = {"/images/play-setting-icon.svg"}
-                   Title = {"Get more done with automation"}
-                   Content = {"Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes."}
-                  /> 
-                  <CardComponent 
-                   classname = "card-container"
-                   Icon = {"/images/file-correct-icon.svg"}
-                   Title = {"Unified Policy Management"}
-                   Content = {"Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achive single pane of glass management with Hexnode."}
-                  />    
-                  </div>
-                                                  
-            {/* </>))}             */}
+            <div className="column center-icon">
+                <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
             </div>
+            <div 
+            className="column">
+                <CardComponent 
+                  classname = "card-container"
+                   Icon = {"/images/sample.svg"}
+                   Title = {"Adapt to the new normal"}
+                   Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
+                  />
+                   <CardComponent 
+                  classname = "card-container"
+                   Icon = {"/images/sample.svg"}
+                   Title = {"Adapt to the new normal"}
+                   Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
+                  />
+            </div>
+            </div>
+            {/* </div> */}
         </div>
         </>)
     } catch (error) {
         console.log("error in BodySection",error);
     }
 }
+
 
 const FeatureSection = () =>{
     try {
@@ -379,10 +385,10 @@ const FooterSection = () =>{
 return(<>
     {HeaderSection()}
     {BodySection()}
-    {FeatureSection()}
-    {MultiPlatformSection()}
-    {CustomerSection()}
+    {/* {FeatureSection()} */}
+    {/* {MultiPlatformSection()} */}
+    {/* {CustomerSection()} */}
     {/* {ScrollingSection()} */}
-    {FooterSection()}
+    {/* {FooterSection()} */}
 </>)
 }
