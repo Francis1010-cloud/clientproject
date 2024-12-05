@@ -1,6 +1,6 @@
 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CardComponent from '../CommonComponents/CardComponent';
 import FeatureCardComponent from '../CommonComponents/FeatureCardComponent';
 import UserCardCompnent from '../CommonComponents/UserCardComponent';
@@ -9,13 +9,13 @@ import './LandingPage.scss';
 export default function LandingPage() {
 
     const [selectedPlatformIndex,setSelectedPlatformIndex] = useState(0);
+    const [selectedUserIndex,setSelectedUserIndex] = useState(0);
+    
 
 
-    const navbarContent = [
-                    "Why Hexnode",
-                    "Features",
-                    "Platforms",
-                    "Customers"]
+    const navbarContent = [{name:"Why Hexnode",id:"#feature"},
+        {name:"Features",id:"#feature"},
+        {name:"Platforms",id:"#feature"},{name:"Customers",id:"#feature"}]
 
     const headerCompanyList = [
         {   src:"https://static.hexnode.com/v2/assets/img/accolades/idc.png",
@@ -49,6 +49,57 @@ export default function LandingPage() {
         {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."}
     ]
 
+    const userDetails = [{  image:"https://static.hexnode.com/v2/assets/img/customer-images/dalibor-kruljac.png?w=1200&q=80",
+        content : "Hexnode is of great value. Works great with Android and iOS!",
+        userName : "Dalibor Kruljac",
+        description : "Executive Account Manager, NCS"},
+        {  image:"https://static.hexnode.com/v2/assets/img/customer-images/justin-modrak.png",
+            content :"Most complete MDM solution I found, and I tested many of them, including major names",
+            userName : "Chris Robinson",
+            description : "Executive Account Manager, NCS"},
+            {  image:"https://static.hexnode.com/v2/assets/img/customer-images/chris-robinson.png",
+                content : "It seemed to be in-line with everything we were looking at.",
+                userName : "Justin Modrak",
+                description : "EEast Troy Community School District"}]
+
+
+useEffect(()=>{
+    scrollFunction();
+},[]);
+
+
+const handleScroll = () => {
+    let element:any = document.getElementById("header");
+    console.log(element);
+    let navelement:any = element.getElementsByClassName("nav-bar");
+  let atagElement = navelement[0].getElementsByTagName("a");
+    console.log(navelement);
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      element.style.background="white";
+      element.style.color="black";
+      for(let item of atagElement){
+        item.style.color="black";
+      }
+      
+    }else{
+        element.style.background="rgb(2 10 25/1)";
+      element.style.color="white";
+      for(let item of atagElement){
+        item.style.color="white";
+      }
+    }
+  };
+
+
+const scrollFunction = () =>{
+    try {
+        window.addEventListener('scroll', handleScroll);
+    } catch (error) {
+        
+    }
+}
+
+
 
 const HeaderSection = () =>{
 
@@ -56,13 +107,13 @@ const HeaderSection = () =>{
         return(
             <>
             <div className='header'>
-                <div className="header-section">
+                <div className="header-section" id="header">
                     <div className='nav-bar'>
                     <div style={{fontWeight:"bolder"}}>
-                        <img src="./images/hexnode-logo.svg" alt="hexnode-logo"/>
+                       hexnode
                         </div>
                         {navbarContent.map((item:any)=>(<>
-                        <div>{item} </div>  
+                        <a href={item.id}>{item.name} </a>  
                         </>))}
                     </div>
                 <div className='trail-button'>
@@ -76,8 +127,8 @@ const HeaderSection = () =>{
                     <p>Hexnode's UEM solution allows you to simplify endpoint management and free up IT. 
                         Focus on the big picture while Hexnode works on the details.</p>
                         <div className='email-field'>
-                        <input/>
-                        <div className='input-button trail-button'>
+                        <input placeholder='Email'/>
+                        <div className='input-button trail-button' style={{width:"auto"}}>
                             LET'S TRY IT OUT
                         </div>
                 </div>
@@ -86,8 +137,8 @@ const HeaderSection = () =>{
                 <img 
     alt="Hexnode UEM" 
     fetchPriority="high" 
-    width="610" 
-    height="465" 
+    width="100%" 
+    height="100%" 
     decoding="async" 
     style={{color:"transparent"}}
     srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=640&q=90 1x, https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90 2x" 
@@ -97,13 +148,17 @@ const HeaderSection = () =>{
                 </div>
             </div>
             <div className='header-company-details'> 
-                    {headerCompanyList.map((item:any)=>(<>
+                    {headerCompanyList.map((item:any,index)=>(<>
                     <div>
                     <img alt="IDC" src={item.src} width={item.width} height={item.height} loading="lazy" />
 
                         <p style={{width:'14.2rem'}}>{item.details}</p> 
                     </div>
-                    <div className='vertical-line'></div>
+                    {index != headerCompanyList?.length - 1 && <>
+                    
+                        <div className='vertical-line'></div>
+                    </> }
+                   
                     </>))}
             </div>
 
@@ -124,7 +179,9 @@ const BodySection = () =>{
         return(<>
         <div className="body-section">
             <div className="heading font-bold">Why Hexnode?</div>
-            <div className="center-div"><img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/></div>
+            <div className="center-div">
+                <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
+            </div>
             <div className="card-group">
             {cardDetails.map((item:any)=>(<>
             <CardComponent 
@@ -145,7 +202,7 @@ const BodySection = () =>{
 const FeatureSection = () =>{
     try {
         return(<>
-        <div className="feature-section">
+        <div className="feature-section" id="feature">
             <div className="heading font-bold">
                 Powerful endpoint management, built for the devices you choose
             </div>
@@ -228,13 +285,19 @@ const CustomerSection = () =>{
                         What our customers say
                     </h2>
                 </div>
-                <div>
-               <UserCardCompnent 
-                Image="https://static.hexnode.com/v2/assets/img/customer-images/dalibor-kruljac.png?w=1200&q=80"
-                Content = "Hexnode is of great value. Works great with Android and iOS!"
-                Name = "Dalibor Kruljac"
-                Description = "Executive Account Manager, NCS"
-               />
+                <div className='user-card-carousal'>
+                    <button disabled={selectedUserIndex == 0} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev-1))}>
+                            <img style={{opacity :  selectedUserIndex == 0 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/prev-arrow-icon-black.svg"/>
+                    </button>
+                <UserCardCompnent 
+                    Image={userDetails[selectedUserIndex].image}
+                    Content = {userDetails[selectedUserIndex].content}
+                    Name = {userDetails[selectedUserIndex].userName}
+                    Description = {userDetails[selectedUserIndex].description}
+                />
+                    <button disabled={selectedUserIndex == userDetails.length - 1} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev+1))}>
+                        <img style={{opacity :  selectedUserIndex == userDetails.length - 1 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/next-arrow-icon-black.svg"/>
+                    </button>
                 </div>
         </div>
         

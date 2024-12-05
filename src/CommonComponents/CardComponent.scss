@@ -14,5 +14,12 @@
     }
     .hover-text{
         color: red;
+        display: none;
+    }
+}
+
+.card-container:hover{
+    .hover-text{
+        display: block;
     }
 }
