@@ -37,11 +37,6 @@
     }
     .header-details{
         margin-block: auto;
-        p{
-            opacity: 0.8;
-            font-size: 18px;
-            line-height: 2rem;
-        }
     }
     .header-company-details{
         display: grid;
@@ -118,13 +113,30 @@
         display: flex;
         column-gap: 150px
     }
+       /* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+  }
     .center-icon{
-        width: 18%;
+        width: 10%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+  .row{
+    display: flex;
+    justify-content: center;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
+
 .feature-section{
     .heading{
         text-align: center;
@@ -223,24 +235,12 @@
     border-bottom:1px solid rgb(215, 215, 215);
     width: 100%;
  }
+ p{
+    opacity: 0.8;
+    font-size: 19px;
+    opacity: 0.7;
+}
 
- * {
-    box-sizing: border-box;
-  }
- /* Create three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 
 
  @media only screen and (max-width: 860px) {
