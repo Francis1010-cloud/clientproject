@@ -24,11 +24,11 @@ export default function LandingPage() {
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}]
 
 
-    const featureDetails = [{icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},{icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."}
+    const featureDetails = [{icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},{icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."}
     ]
 
 const HeaderSection = () =>{
@@ -69,7 +69,7 @@ const HeaderSection = () =>{
                     {headerCompanyList.map((item:any)=>(<>
                     <div>
                         <div>{item.image}</div>
-                        <div style={{width:'14.2rem',lineHeight:'1.5rem'}}>{item.details}</div> 
+                        <p style={{width:'14.2rem'}}>{item.details}</p> 
                     </div>
                     <div className='vertical-line'></div>
                     </>))}
@@ -134,10 +134,46 @@ const FeatureSection = () =>{
         
     }
 }
+
+const MultiPlatformSection = () =>{
+    try {
+        return(<>
+        <div className="platform-section">
+            <div className='header-content'> <div className="heading font-bold">
+                Multi-platform Endpoint Management
+            </div>
+            <p>Devices of varying platforms? Hexnode thrives in a diverse environment.</p> </div>
+            <div className="platform-content">
+                <div className="platform-image">
+                <img 
+    alt="Android Management with Hexnode UEM" 
+    fetchPriority="high" 
+    width="100%" 
+    height="100%" 
+    decoding="async" 
+    srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=640&q=90 1x, 
+            https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90 2x" 
+    src="https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90" 
+    ></img>
+
+                </div>
+                <div>
+COntent
+                </div>
+            </div>
+        </div>
+        
+        </>)
+    } catch (error) {
+        console.log("error in MultiPlatformSection",error);
+        
+    }
+}
  
 return(<>
     {HeaderSection()}
     {BodySection()}
     {FeatureSection()}
+    {MultiPlatformSection()}
 </>)
 }

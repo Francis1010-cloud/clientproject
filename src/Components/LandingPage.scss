@@ -20,6 +20,8 @@
     
     }
     .header-details{
+
+
         p{
             opacity: 0.8;
             font-size: 18px;
@@ -39,6 +41,9 @@
             border-left: 1px solid white;
             height: 8rem;
             opacity: 0.4;
+         }
+         p{
+
          }
     }
 
@@ -90,9 +95,29 @@
     .feature-details-card{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 9rem;
-        padding: 5rem;
+        column-gap: 5rem;
+        padding: 0rem 5rem;
         row-gap: 5rem;
+    }
+}
+
+.platform-section{
+    background: rgb(247 247 247/1);
+    padding: 5rem;
+    p{
+        opacity: 0.8;
+        font-size: 18px;
+        line-height: 2rem;
+    }
+    .header-content{
+        text-align: center;
+    }
+    .platform-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .platform-image{
+        border-radius: 1rem;
     }
 }
 
@@ -100,5 +125,3 @@
     font-weight: 600;
     font-size: 2.5rem;
 }
-
-
