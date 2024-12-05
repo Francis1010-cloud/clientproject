@@ -14,9 +14,14 @@ export default function LandingPage() {
                     "Customers"]
 
     const headerCompanyList = [
-        {image:"Image",details:"Hexnode is listed as a leader and a major player in IDC MarketScape UEM Vendors Assessment Reports 2024."},
-        {image:"Image",details:"Hexnode mentioned as a Notable Vendor in Midmarket Context: Magic Quadrant for Unified Endpoint Management tools 2022."},
-        {image:"Image",details:"Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023."}];
+        {   src:"https://static.hexnode.com/v2/assets/img/accolades/idc.png",
+            width:"83",
+            height:"25",
+            details:"Hexnode is listed as a leader and a major player in IDC MarketScape UEM Vendors Assessment Reports 2024."},
+        { src:"https://static.hexnode.com/v2/assets/img/accolades/gartner.png",   width:"110",
+            height:"25",details:"Hexnode mentioned as a Notable Vendor in Midmarket Context: Magic Quadrant for Unified Endpoint Management tools 2022."},
+        { src:"https://static.hexnode.com/v2/assets/img/accolades/forrester.png",   width:"150",
+            height:"25",details:"Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023."}];
     
     const cardDetails = [
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
@@ -48,7 +53,9 @@ const HeaderSection = () =>{
             <div className='header'>
                 <div className="header-section">
                     <div className='nav-bar'>
-                    <div style={{fontWeight:"bolder"}}>hexnode</div>
+                    <div style={{fontWeight:"bolder"}}>
+                        <img src="./images/hexnode-logo.svg" alt="hexnode-logo"/>
+                        </div>
                         {navbarContent.map((item:any)=>(<>
                         <div>{item} </div>  
                         </>))}
@@ -71,13 +78,24 @@ const HeaderSection = () =>{
                 </div>
                 </div>
                 <div className='header-image'>
-                    Image
+                <img 
+    alt="Hexnode UEM" 
+    fetchPriority="high" 
+    width="610" 
+    height="465" 
+    decoding="async" 
+    style={{color:"transparent"}}
+    srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=640&q=90 1x, https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90 2x" 
+    src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90"
+/>
+
                 </div>
             </div>
             <div className='header-company-details'> 
                     {headerCompanyList.map((item:any)=>(<>
                     <div>
-                        <div>{item.image}</div>
+                    <img alt="IDC" src={item.src} width={item.width} height={item.height} loading="lazy" />
+
                         <p style={{width:'14.2rem'}}>{item.details}</p> 
                     </div>
                     <div className='vertical-line'></div>
