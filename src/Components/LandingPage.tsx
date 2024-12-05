@@ -76,7 +76,7 @@ const handleScroll = () => {
     console.log(navelement);
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       element.style.background="white";
-      element.style.color="black";
+    //   element.style.color="black";
       for(let item of atagElement){
         item.style.color="black";
       }
@@ -126,12 +126,12 @@ const HeaderSection = () =>{
                     <div className='bold-text' style={{marginTop:"13px"}}> Gain control and visibility over your endpoints</div>
                     <p>Hexnode's UEM solution allows you to simplify endpoint management and free up IT. 
                         Focus on the big picture while Hexnode works on the details.</p>
-                        <div className='email-field'>
-                        <input placeholder='Email'/>
-                        <div className='input-button trail-button' style={{width:"auto"}}>
-                            LET'S TRY IT OUT
-                        </div>
-                </div>
+                        {/* <div className='email-field'>
+                            <input placeholder='Email'/>
+                            <div className='input-button trail-button' style={{width:"auto"}}>
+                                LET'S TRY IT OUT
+                            </div>
+                </div> */}
                 </div>
                 <div className='header-image'>
                 <img 
@@ -182,15 +182,35 @@ const BodySection = () =>{
             <div className="center-div">
                 <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
             </div>
-            <div className="card-group">
-            {cardDetails.map((item:any)=>(<>
+            <div className='card-group'>
+            {/* {cardDetails.map((item:any,index)=>(<> */}
+            <div style={{display:"flex",flexFlow:"column",rowGap:"5rem"}}>
             <CardComponent 
-                   Icon = {item.icon}
-                   Title = {item.title}
-                   Content = {item.content}
-                  />
-                            
-            </>))}            
+                   Icon = {"/images/sample.svg"}
+                   Title = {"Adapt to the new normal"}
+                   Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
+                  /> 
+                  <CardComponent 
+                   Icon = {"/images/tick-icon.svg"}
+                   Title = {"Zero compromise security"}
+                   Content = {"Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises."}
+                  /> 
+            </div>
+                
+                  <div style={{display:"flex",flexFlow:"column",rowGap:"5rem"}}>
+                  <CardComponent 
+                   Icon = {"/images/play-setting-icon.svg"}
+                   Title = {"Get more done with automation"}
+                   Content = {"Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes."}
+                  /> 
+                  <CardComponent 
+                   Icon = {"/images/file-correct-icon.svg"}
+                   Title = {"Unified Policy Management"}
+                   Content = {"Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achive single pane of glass management with Hexnode."}
+                  />    
+                  </div>
+                                                  
+            {/* </>))}             */}
             </div>
         </div>
         </>)

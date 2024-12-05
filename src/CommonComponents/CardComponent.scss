@@ -1,11 +1,11 @@
 .card-container{
     border: 1px solid rgb(215 215 215/1);
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 15px;
     transition: 1s;
     .card-header{
         display: flex;
-       align-items: center;
+       align-items: center;   
     }
     p{
         line-height: 1.8rem;
