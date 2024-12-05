@@ -12,11 +12,12 @@ const CardDesign = () =>{
         return(<>
         <div className="card-container">
         <div className='card-header'>
-            <div>
+            {Icon && <div >
                 <img src={Icon} alt="sampleimage"/>
-            </div>
+            </div>}
+            
             <div>      
-                <h3>{Title}</h3> 
+                <h2>{Title}</h2> 
             </div>
 
                    </div> 

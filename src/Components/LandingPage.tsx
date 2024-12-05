@@ -2,6 +2,7 @@
 
 import CardComponent from '../CommonComponents/CardComponent';
 import FeatureCardComponent from '../CommonComponents/FeatureCardComponent';
+import UserCardCompnent from '../CommonComponents/UserCardComponent';
 import './LandingPage.scss';
 
 export default function LandingPage() {
@@ -22,6 +23,14 @@ export default function LandingPage() {
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}]
+    
+        const platformDetails = [
+            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
+            {icon:"",title:"iOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
+            {icon:"",title:"macOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
+            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
+            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
+            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}]
 
 
     const featureDetails = [{icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
@@ -149,16 +158,34 @@ const MultiPlatformSection = () =>{
     alt="Android Management with Hexnode UEM" 
     fetchPriority="high" 
     width="100%" 
-    height="100%" 
+    height="auto" 
     decoding="async" 
-    srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=640&q=90 1x, 
-            https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90 2x" 
+    srcSet=" https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=640&q=90 1x,
+  https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90 2x" 
     src="https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90" 
     ></img>
+   
+
 
                 </div>
-                <div>
-COntent
+                <div className='platform-card-container'>
+                
+                {platformDetails.map((item:any,index:number)=>(<>
+                {index == 1 ?  <>
+                    <CardComponent 
+                   Icon = {item.icon}
+                   Title = {item.title}
+                   Content = {item.content}
+                  />
+                </>  : <>
+                <div style={{marginInline:"1rem"}}>
+                    <h3 style={{fontSize:"24px"}}>{item.title}</h3>
+                    <div className="horizontal-line"></div>
+                    </div>
+                </>}
+
+                            
+            </>))} 
                 </div>
             </div>
         </div>
@@ -169,11 +196,84 @@ COntent
         
     }
 }
+
+
+const CustomerSection = () =>{
+    try {
+        return(<>
+        <div className='customer-section'>
+                <div className="header-section">
+                    <h2 className="heading font-bold">
+                        What our customers say
+                    </h2>
+                </div>
+                <div>
+               <UserCardCompnent 
+                Image="https://static.hexnode.com/v2/assets/img/customer-images/dalibor-kruljac.png?w=1200&q=80"
+                Content = "Hexnode is of great value. Works great with Android and iOS!"
+                Name = "Dalibor Kruljac"
+                Description = "Executive Account Manager, NCS"
+               />
+                </div>
+        </div>
+        
+        </>)
+    } catch (error) {
+        
+    }
+}
  
+const ScrollingSection = () =>{
+    try {
+        return(<>
+        ScrollingSection
+        </>)
+    } catch (error) {
+        console.log("error in ScrollingSection",error);
+        
+    }
+}
+
+const FooterSection = () =>{
+    try {
+        return(<>
+        <div className='footer-section'>
+            <div>Get Hexnode UEM and start securing your endpoints</div>
+            <div className='trail-button' style={{margin:"1.5rem auto"}}>
+            TRY HEXNODE FOR FREE
+                </div>
+        </div>
+        <div className='bottom-container'>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+            <div>
+                    Terms of use -
+                </div>
+                <div>
+                &nbsp; Privacy -
+                </div>
+                <div>
+                &nbsp; Cookies
+                </div>
+            </div>
+            <div style={{textAlign:"center"}}>
+                <p>Copyright © 2024 Mitsogo Inc. All Rights Reserved.</p>
+            </div>
+                
+        </div>
+        
+        </>)
+    } catch (error) {
+        
+    }
+}
+
 return(<>
     {HeaderSection()}
     {BodySection()}
     {FeatureSection()}
     {MultiPlatformSection()}
+    {CustomerSection()}
+    {/* {ScrollingSection()} */}
+    {FooterSection()}
 </>)
 }
