@@ -146,24 +146,28 @@ const HeaderSection = () =>{
     srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=640&q=90 1x, https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90 2x" 
     src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90"
 />
-Image
-
                 </div>
             </div>
-            {/* <div className='header-company-details'> 
+            <div className='header-company'>
+            <div className='header-company-details'> 
                     {headerCompanyList.map((item:any,index)=>(<>
                     <div>
                     <img alt="IDC" src={item.src} width={item.width} height={item.height} loading="lazy" />
-
-                        <p style={{width:'14.2rem'}}>{item.details}</p> 
+                        <div style={{display:"flex"}}>
+                        <p>{item.details}</p> 
+                                                <div className='vertical-line'></div>
+                        </div>
+                        
                     </div>
-                    {index != headerCompanyList?.length - 1 && <>
+                    {/* {index != headerCompanyList?.length - 1 && <>
                     
                         <div className='vertical-line'></div>
-                    </> }
+                    </> } */}
                    
                     </>))}
-            </div> */}
+            </div>
+            </div>
+
 
             </div>
             
@@ -391,7 +395,7 @@ const FooterSection = () =>{
                 </div>
             </div>
             <div style={{textAlign:"center"}}>
-                <p>Copyright © 2024 Mitsogo Inc. All Rights Reserved.</p>
+                <div>Copyright © 2024 Mitsogo Inc. All Rights Reserved.</div>
             </div>
                 
         </div>
@@ -409,6 +413,6 @@ return(<>
     {MultiPlatformSection()}
     {CustomerSection()}
     {/* {ScrollingSection()} */}
-    {/* {FooterSection()} */}
+    {FooterSection()}
 </>)
 }
