@@ -25,7 +25,7 @@
         justify-content: space-between;
         padding: 2rem 5rem;
         transition: 0.5s;
-        position: fixed;
+        // position: fixed;
         width: -webkit-fill-available;
         z-index: 1;
         .nav-bar{
@@ -52,7 +52,7 @@
     }
 
 .header-content{
-    padding: 8rem 5rem 5rem 5rem;
+    padding: 40px;
     display: grid;
     gap: 2.5rem;
     grid-template-columns: 1fr 1fr;
@@ -116,10 +116,12 @@
        /* Create three equal columns that floats next to each other */
 .column {
     float: left;
-    width: 33.33%;
+    width: calc(100% - 30px);
     padding: 10px;
   }
+
     .center-icon{
+        display: block;
         width: 10%;
         display: flex;
         align-items: center;
@@ -128,6 +130,9 @@
   .row{
     display: flex;
     justify-content: center;
+    margin-top:30px;
+    flex-flow: row;
+    margin-inline: 35px;
   }
   /* Clear floats after the columns */
   .row:after {
@@ -247,6 +252,10 @@
     .bottom-container{
         flex-flow: column;
     }
+    .body-section .row{
+        flex-flow: column;
+        align-items: center;
+    }
   }
 
   @media only screen and (max-width: 1240px) {
@@ -258,9 +267,12 @@
    .header-company-details{
     grid-template-columns: 1fr;
    }
-   .center-div{
-    display: none;
+   .body-section{
+    .center-icon{
+        display: none;
+       }
    }
+
    .header-details{
     text-align: center;
    }

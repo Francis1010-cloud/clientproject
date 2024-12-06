@@ -186,14 +186,17 @@ const BodySection = () =>{
                 <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
             </div> */}
             {/* <div className='card-group'> */}
-                        <div className="row">
+        <div className="row">
             <div className="column">
-            <CardComponent 
+                <div style={{marginBottom:"70px"}}>
+                <CardComponent 
                   classname = "card-container"
                    Icon = {"/images/sample.svg"}
                    Title = {"Adapt to the new normal"}
                    Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
                   />
+                </div>
+            
                    <CardComponent 
                   classname = "card-container"
                    Icon = {"/images/sample.svg"}
@@ -206,12 +209,16 @@ const BodySection = () =>{
             </div>
             <div 
             className="column">
+                <div style={{marginBottom:"70px"}}>
+
                 <CardComponent 
                   classname = "card-container"
                    Icon = {"/images/sample.svg"}
                    Title = {"Adapt to the new normal"}
                    Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
                   />
+                </div>
+                
                    <CardComponent 
                   classname = "card-container"
                    Icon = {"/images/sample.svg"}
@@ -385,10 +392,10 @@ const FooterSection = () =>{
 return(<>
     {HeaderSection()}
     {BodySection()}
-    {FeatureSection()}
+    {/* {FeatureSection()}
     {MultiPlatformSection()}
-    {CustomerSection()}
+    {CustomerSection()} */}
     {/* {ScrollingSection()} */}
-    {FooterSection()}
+    {/* {FooterSection()} */}
 </>)
 }
