@@ -8,6 +8,7 @@
     background: rgb(2 10 25/1);
     color: white;
 
+
     .header-section:hover{
         background: white;
         
@@ -35,7 +36,8 @@
         transition: 0.5s;
         position: fixed;
         width: -webkit-fill-available;
-        z-index: 1;
+        z-index: 1;   
+         border-bottom: 1px solid black;
         .nav-bar{
             display: flex;
             gap: 1rem;
@@ -178,14 +180,13 @@
     background: rgb(247 247 247/1);
     .header-content{
         text-align: center;    
-        padding-top: 40px;
+        padding: 40px;
 
     }
     .platform-content{
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 3rem;
-        margin-top: 4rem;
         padding-bottom: 45px;
     }
     .platform-image{

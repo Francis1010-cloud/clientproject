@@ -34,13 +34,13 @@ export default function LandingPage() {
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."},
         {icon:"./images/sample.svg",title:"Adapt to the new normal",content:"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}]
     
-        const platformDetails = [
+        const platformDetails:any = [
             {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90", icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
-            {icon:"",title:"iOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
-            {icon:"",title:"macOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
-            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
-            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
-            {icon:"",title:"Android",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}]
+            {src: "https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/iOS.jpg", icon:"",title:"iOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
+            {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/macOS.jpg",icon:"",title:"macOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
+            {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/windows.jpg",icon:"",title:"Windows",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."},
+            {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/tvOS.jpg",icon:"",title:"tvOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
+            {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/fireOS.jpg",icon:"",title:"FireOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}]
 
 
     const featureDetails = [{icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
@@ -76,13 +76,14 @@ const handleScroll = () => {
     let menuIcon:any = document.getElementsByClassName("menu-icon");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       element.style.background="white";
-    //   element.style.color="black";
-    menuIcon[0].style.color = "black"
+      element.style.borderBottom = "1px solid lightgrey";
+        menuIcon[0].style.color = "black"
       for(let item of atagElement){
         item.style.color="black";
       }
       
     }else{
+        element.style.borderBottom = "1px solid black";
         element.style.background="rgb(2 10 25/1)";
       element.style.color="white";
        menuIcon[0].style.color = "white"
@@ -285,8 +286,8 @@ const MultiPlatformSection = () =>{
     width="100%" 
     height="auto" 
     decoding="async" 
-    src="https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/android.jpg?w=1200&q=90" 
-    ></img>
+    src={platformDetails[selectedPlatformIndex].src}
+    />
    
 
 

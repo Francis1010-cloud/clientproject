@@ -23,7 +23,7 @@ export default function UserCardCompnent({ Image, Content, Name, Description }: 
                     </div>
                     <div className="user-content">
                         <div className='user-details'>
-                            {Content}   
+                            "{Content}"   
                         </div>
                         <div className="footer-content"> 
                             <div className='user-name'>
