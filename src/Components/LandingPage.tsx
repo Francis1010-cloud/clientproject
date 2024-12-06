@@ -392,9 +392,9 @@ const FooterSection = () =>{
 return(<>
     {HeaderSection()}
     {BodySection()}
-    {/* {FeatureSection()}
-    {MultiPlatformSection()}
-    {CustomerSection()} */}
+    {FeatureSection()}
+    {/* {MultiPlatformSection()} */}
+    {/* {CustomerSection()} */}
     {/* {ScrollingSection()} */}
     {/* {FooterSection()} */}
 </>)
