@@ -14,9 +14,9 @@ export default function LandingPage() {
     
 
 
-    const navbarContent = [{name:"Why Hexnode",id:"#feature"},
+    const navbarContent = [{name:"Why Hexnode",id:"#hexnode-body"},
         {name:"Features",id:"#feature"},
-        {name:"Platforms",id:"#feature"},{name:"Customers",id:"#feature"}]
+        {name:"Platforms",id:"#platform-section"},{name:"Customers",id:"#customer-section"}]
 
     const headerCompanyList = [
         {   src:"https://static.hexnode.com/v2/assets/img/accolades/idc.png",
@@ -73,9 +73,11 @@ const handleScroll = () => {
     let element:any = document.getElementById("header");
     let navelement:any = element.getElementsByClassName("nav-bar");
     let atagElement = navelement[0].getElementsByTagName("a");
+    let menuIcon:any = document.getElementsByClassName("menu-icon");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       element.style.background="white";
     //   element.style.color="black";
+    menuIcon[0].style.color = "black"
       for(let item of atagElement){
         item.style.color="black";
       }
@@ -83,6 +85,7 @@ const handleScroll = () => {
     }else{
         element.style.background="rgb(2 10 25/1)";
       element.style.color="white";
+       menuIcon[0].style.color = "white"
       for(let item of atagElement){
         item.style.color="white";
       }
@@ -126,7 +129,7 @@ const HeaderSection = () =>{
                 <div className='header-details'>
                     <div className='opacity-low'>Unified Endpoint Management</div>
                     <div className='bold-text' style={{marginTop:"13px"}}> Gain control and visibility over your endpoints</div>
-                    <p>Hexnode's UEM solution allows you to simplify endpoint management and free up IT. 
+                    <p style={{fontSize:"19px",lineHeight:"32px", opacity:"0.7"}}> UEM solution allows you to simplify endpoint management and free up IT. 
                         Focus on the big picture while Hexnode works on the details.</p>
                         {/* <div className='email-field'>
                             <input placeholder='Email'/>
@@ -153,16 +156,17 @@ const HeaderSection = () =>{
                     {headerCompanyList.map((item:any,index)=>(<>
                     <div>
                     <img alt="IDC" src={item.src} width={item.width} height={item.height} loading="lazy" />
-                        <div style={{display:"flex"}}>
+                        <div className={index != headerCompanyList?.length - 1 ? "header-company-content" : ""}>
                         <p>{item.details}</p> 
-                                                <div className='vertical-line'></div>
+                                                   {index != headerCompanyList?.length - 1 && <>
+                    
+                        <div className='vertical-line'></div>
+                        <div className='horizontal-line'></div>
+                    </> }
                         </div>
                         
                     </div>
-                    {/* {index != headerCompanyList?.length - 1 && <>
-                    
-                        <div className='vertical-line'></div>
-                    </> } */}
+                 
                    
                     </>))}
             </div>
@@ -184,7 +188,7 @@ const HeaderSection = () =>{
 const BodySection = () =>{
     try {
         return(<>
-        <div className="body-section">
+        <div className="body-section" id='hexnode-body'>
             <div className="heading font-bold">Why Hexnode?</div>
             {/* <div className="center-div">
                 <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
@@ -268,7 +272,7 @@ const FeatureSection = () =>{
 const MultiPlatformSection = () =>{
     try {
         return(<>
-        <div className="platform-section">
+        <div className="platform-section" id="platform-section">
             <div className='header-content'> <div className="heading font-bold">
                 Multi-platform Endpoint Management
             </div>
@@ -321,7 +325,7 @@ const MultiPlatformSection = () =>{
 const CustomerSection = () =>{
     try {
         return(<>
-        <div className='customer-section'>
+        <div className='customer-container' id="customer-section">
                 <div className="header-section">
                     <h2 className="heading font-bold">
                         What our customers say

@@ -1,3 +1,9 @@
+
+*{
+    scroll-behavior: smooth;
+}
+
+
 .header{
     background: rgb(2 10 25/1);
     color: white;
@@ -18,6 +24,8 @@
     }
     .menu-icon{
         display: none;
+        color: white;
+        font-size: x-large;
     }
 
     .header-section{
@@ -25,18 +33,22 @@
         justify-content: space-between;
         padding: 2rem 5rem;
         transition: 0.5s;
-        // position: fixed;
+        position: fixed;
         width: -webkit-fill-available;
         z-index: 1;
         .nav-bar{
             display: flex;
             gap: 1rem;
             align-items: center;
+            color: white;
         }
-        
     }
     .header-details{
         margin-block: auto;
+        order: 1;
+    }
+    .header-image{
+        order: 2;
     }
     .header-company{
         background-color: rgb(26, 28, 43); 
@@ -51,12 +63,15 @@
             font-size: 16px;
             line-height: 1.5rem;   
     }
+    .header-company-content{
+        display: flex;
+    }
 
 .header-content{
-    padding: 40px;
+    padding: 100px 50px;
     display: grid;
     gap: 2.5rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.4fr;
         .email-field{
             display: grid;
             gap: 1rem;
@@ -81,6 +96,7 @@
 }
 }
 
+
 .nav-bar a{
     color: white;
     text-decoration: none;
@@ -88,7 +104,6 @@
 
 .trail-button{
     background: red;
-    padding: 12px 37px;
     border-radius: 3px;
     display: flex;
     justify-content: center;
@@ -96,6 +111,7 @@
     cursor: pointer;
     transition: 0.3s;
     white-space: nowrap;
+    align-items: center;
 }
 .trail-button:hover{
     opacity: 0.8;
@@ -161,13 +177,16 @@
 .platform-section{
     background: rgb(247 247 247/1);
     .header-content{
-        text-align: center;
+        text-align: center;    
+        padding-top: 40px;
+
     }
     .platform-content{
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 3rem;
         margin-top: 4rem;
+        padding-bottom: 45px;
     }
     .platform-image{
         border-radius: 1rem;
@@ -182,7 +201,7 @@
     }
 }
 
-.customer-section{
+.customer-container{
     .header-section{
         text-align: center;
         margin-inline: 50px;
@@ -235,7 +254,7 @@
         font-size: 12px;
         display: flex;
         justify-content: space-between;
-        padding: 1rem 6rem;
+        padding: 20px 55px;
         flex-flow: row;
         opacity: 0.9;
     }
@@ -244,7 +263,7 @@
 
 .font-bold{
     font-weight: 600;
-    font-size: 32px;
+    font-size: 37px;
 }
 
 .vertical-line{
@@ -257,6 +276,8 @@
  .horizontal-line{
     border-bottom:1px solid rgb(215, 215, 215);
     width: 98%;
+    margin-block: 44px;
+    display: none;
  }
  p{
     font-size: 15px;
@@ -279,36 +300,50 @@
             grid-template-columns: repeat(2,1fr);
             margin: 15px 30px;
         }
-    }   
+    }  
   }
 
   @media only screen and (max-width: 1240px) {
    .header .header-content{
         grid-template-columns: 1fr;
-        padding-inline: 100px;
+        // padding-inline: 280px;_
+        // width: 750px;
+        // margin: auto;
    } 
-   .header-company-details{
-    grid-template-columns: 1fr;
-   }
+
    .body-section{
     .center-icon{
         display: none;
        }
    }
 
-   .header-details{
-    text-align: center;
+   .header .header-details{
+        text-align: center;
+        // margin-inline: 225px;
+        order: 2;
    }
    .header-section{
     .trail-button{
         display: none;
+    }
+    .nav-bar{
+        color: black;
     }
     .nav-bar a{
         display: none;
        }
        .menu-icon{
         display: block;
+        color: white;
     }
+   }
+
+   .header.header-details{
+        order: 2;
+   }
+   
+   .header .header-image{
+        order: 1;
    }
    
 
@@ -325,16 +360,30 @@
             grid-template-columns: 1fr;
         }
     }
+    .header .header-company-details{
+        grid-template-columns : 1fr;
+        padding: 39px 100px;
+        text-align: center;
+        
+    }   .header .header-company-content{
+        display: block;
+       }
+    .vertical-line{
+        display: none;
+    }
+    .horizontal-line{
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 940px) {
-    .customer-section .user-bottom-section{
+    .customer-container .user-bottom-section{
         display: flex;
     }
-    .customer-section .user-side-button{
+    .customer-container .user-side-button{
         display: none;
     }
-    .customer-section .user-card-carousal{
+    .customer-container .user-card-carousal{
         margin-inline: 20px;
     }
 
