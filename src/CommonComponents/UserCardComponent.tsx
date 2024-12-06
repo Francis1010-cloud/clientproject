@@ -17,19 +17,19 @@ export default function UserCardCompnent({ Image, Content, Name, Description }: 
                             src={Image}
                             alt="Dalibor Kruljac"
                             decoding="async"
-                            style={{borderRadius:"1rem 0rem 0rem 1rem"}}
+                            className="image-class"
                         >
                         </img>
                     </div>
                     <div className="user-content">
-                        <div style={{padding:"3rem",fontSize:"25px",fontWeight:"600"}}>
+                        <div className='user-details'>
                             {Content}   
                         </div>
                         <div className="footer-content"> 
-                            <div style={{fontSize:"20px",fontWeight:"bold"}}>
+                            <div className='user-name'>
                                 {Name}
                             </div>
-                            <div style={{opacity:"0.5"}}>
+                            <div className='user-description'>
                                 {Description}
                             </div>
                         </div>

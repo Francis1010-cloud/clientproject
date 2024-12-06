@@ -8,7 +8,50 @@
         }
         .footer-content{
             background-color: rgba(2,10,25,.05);
-            margin-top: 3rem;
-            padding: 2rem;
+            padding: 30px; 
         }
+        .image-class{
+            border-radius: 20px 0px 0px 20px;
+        }
+        .user-content .user-details{
+            font-size: 28px;
+            font-weight: 500;
+            margin-inline: 27px;  
+            height: 154px; 
+            padding: 4px;
+        }
+        .user-name{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .user-description{
+            opacity: 0.7;
+            font-size: 17px;
+            margin-block: 9px;
+        }
+}
+
+@media only screen and (max-width: 760px) {
+    .user-card-container{
+        grid-template-columns: 1fr;
+        .image-class{
+            border-radius: 20px 20px 0px 0px;
+        }
+        .user-content .user-details{
+            padding: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            
+        }
+        .footer-content{
+            text-align: center;
+        }
+        .user-name{
+            font-size: 17px;
+        }
+        .user-description{
+            font-size: 14px;
+        }
+    }
 }

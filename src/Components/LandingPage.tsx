@@ -324,7 +324,7 @@ const CustomerSection = () =>{
                     </h2>
                 </div>
                 <div className='user-card-carousal'>
-                    <button disabled={selectedUserIndex == 0} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev-1))}>
+                    <button disabled={selectedUserIndex == 0} className='user-button user-side-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev-1))}>
                             <img style={{opacity :  selectedUserIndex == 0 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/prev-arrow-icon-black.svg"/>
                     </button>
                 <UserCardCompnent 
@@ -333,9 +333,22 @@ const CustomerSection = () =>{
                     Name = {userDetails[selectedUserIndex].userName}
                     Description = {userDetails[selectedUserIndex].description}
                 />
-                    <button disabled={selectedUserIndex == userDetails.length - 1} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev+1))}>
+                    <button disabled={selectedUserIndex == userDetails.length - 1} className='user-button user-side-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev+1))}>
                         <img style={{opacity :  selectedUserIndex == userDetails.length - 1 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/next-arrow-icon-black.svg"/>
                     </button>
+                </div>
+                <div className='user-bottom-section'>
+                    <div>
+                        <button disabled={selectedUserIndex == 0} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev-1))}>
+                                <img style={{opacity :  selectedUserIndex == 0 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/prev-arrow-icon-black.svg"/>
+                        </button>
+                    </div>
+                    <div>
+                        <button disabled={selectedUserIndex == userDetails.length - 1} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev+1))}>
+                                    <img style={{opacity :  selectedUserIndex == userDetails.length - 1 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/next-arrow-icon-black.svg"/>
+                                </button>
+                    </div>
+                    
                 </div>
         </div>
         
@@ -393,8 +406,8 @@ return(<>
     {HeaderSection()}
     {BodySection()}
     {FeatureSection()}
-    {/* {MultiPlatformSection()} */}
-    {/* {CustomerSection()} */}
+    {MultiPlatformSection()}
+    {CustomerSection()}
     {/* {ScrollingSection()} */}
     {/* {FooterSection()} */}
 </>)

@@ -150,7 +150,7 @@
     .feature-details-card{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            column-gap: 50px;
+            column-gap: 70px;
             margin: 15px 80px;
             row-gap: 20px;
         
@@ -159,7 +159,6 @@
 
 .platform-section{
     background: rgb(247 247 247/1);
-    padding: 5rem;
     .header-content{
         text-align: center;
     }
@@ -171,6 +170,7 @@
     }
     .platform-image{
         border-radius: 1rem;
+        margin-inline: 32px;
     }
     .platform-card-container{
         overflow-y: scroll;
@@ -182,15 +182,16 @@
 }
 
 .customer-section{
-    
     .header-section{
         text-align: center;
+        margin-inline: 50px;
+
     }
     .user-card-carousal{
         display: flex;
         justify-content: space-between;
-        margin-inline: 3rem;
-        margin-top: 4rem;
+        margin-inline: 100px;   
+        margin-top: 60px;
     }
     .user-button{
         padding: 1rem 1.7rem;
@@ -199,10 +200,23 @@
         border-radius: 1rem;
         cursor: pointer;
     }
+    .user-side-button{
+        // visibility: visible;
+        display: block;
+    }
     .user-button:disabled{
         cursor: not-allowed;
     }
+    .user-bottom-section{
+        display: flex;
+        justify-content: center;
+        margin-block: 40px;
+        display: none;
+    }
 }
+
+
+
 .footer-section{
     background: black;
     color: white;
@@ -239,7 +253,7 @@
  }
  .horizontal-line{
     border-bottom:1px solid rgb(215, 215, 215);
-    width: 100%;
+    width: 98%;
  }
  p{
     opacity: 0.8;
@@ -260,17 +274,15 @@
     .feature-section{
         .feature-details-card{
             grid-template-columns: repeat(2,1fr);
-            margin: 15px 16px;
+            margin: 15px 30px;
         }
-    }
-   
+    }   
   }
 
   @media only screen and (max-width: 1240px) {
    .header .header-content{
         grid-template-columns: 1fr;
-        // text-align: center;
-        // padding: 8rem 20rem 4rem 20rem;
+        padding-inline: 100px;
    } 
    .header-company-details{
     grid-template-columns: 1fr;
@@ -309,5 +321,25 @@
         .feature-details-card{
             grid-template-columns: 1fr;
         }
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .customer-section .user-bottom-section{
+        display: flex;
+    }
+    .customer-section .user-side-button{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .platform-section .platform-content{
+        grid-template-columns: 1fr;
+    }
+    .platform-section .platform-card-container{
+        height: 100%;
+        margin-top: 50px;
     }
 }
