@@ -11,7 +11,8 @@ export default function LandingPage() {
 
     const [selectedPlatformIndex,setSelectedPlatformIndex] = useState(0);
     const [selectedUserIndex,setSelectedUserIndex] = useState(0);
-    const [headerLogoimg,setHeaderLogoimg] = useState("app-main-icon-white.svg")
+    const [headerLogoimg,setHeaderLogoimg] = useState("app-main-icon-white.svg");
+    const [mediaSize,setMediaSize] = useState<any>();
     
 
 
@@ -67,7 +68,16 @@ export default function LandingPage() {
 
 useEffect(()=>{
     scrollFunction();
+    watchMediaSize();
 },[]);
+
+function watchMediaSize(){
+    try {
+        setMediaSize(window.matchMedia("(max-width: 700px)"));
+    } catch (error) {
+        
+    }
+}
 
 
 const handleScroll = () => {
@@ -420,7 +430,12 @@ function closeNav(){
 
 function openNav() {
     let elem:any = document.getElementById("mySidenav");
-    elem.style.width = "430px";
+    if (mediaSize.matches) { // If media query matches
+        elem.style.width = "100%";
+      } else {
+        elem.style.width = "430px";
+      }
+   
     // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
 
