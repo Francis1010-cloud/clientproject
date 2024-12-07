@@ -5,12 +5,13 @@ import CardComponent from '../CommonComponents/CardComponent';
 import FeatureCardComponent from '../CommonComponents/FeatureCardComponent';
 import UserCardCompnent from '../CommonComponents/UserCardComponent';
 import './LandingPage.scss';
-import { MenuOutlined } from '@ant-design/icons';
+import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 
 export default function LandingPage() {
 
     const [selectedPlatformIndex,setSelectedPlatformIndex] = useState(0);
     const [selectedUserIndex,setSelectedUserIndex] = useState(0);
+    const [headerLogoimg,setHeaderLogoimg] = useState("app-main-icon-white.svg")
     
 
 
@@ -112,9 +113,9 @@ const HeaderSection = () =>{
             <div className='header'>
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
-                    <div style={{fontWeight:"bolder"}}>
-                    <img src="./images/file-correct-icon.svg" alt="hexnode-logo"/>
-                        </div>
+                    <div style={{width:"100px",height:"auto"}}>
+                    <img src={`./images/${headerLogoimg}`} alt="Logo" />
+                </div>
                         {navbarContent.map((item:any)=>(<>
                         <a href={item.id}>{item.name} </a>  
                         </>))}
@@ -122,7 +123,7 @@ const HeaderSection = () =>{
                 <div className='trail-button'>
                         14 DAY FREE TRAIL
                 </div>
-                <div className="menu-icon">
+                <div className="menu-icon"  onClick={()=>openNav()}>
                   <MenuOutlined />
                 </div>
             </div>
@@ -132,12 +133,12 @@ const HeaderSection = () =>{
                     <div className='bold-text' style={{marginTop:"13px"}}> Gain control and visibility over your endpoints</div>
                     <p style={{fontSize:"19px",lineHeight:"32px", opacity:"0.7"}}> UEM solution allows you to simplify endpoint management and free up IT. 
                         Focus on the big picture while Hexnode works on the details.</p>
-                        {/* <div className='email-field'>
+                     <div className='email-field'>
                             <input placeholder='Email'/>
                             <div className='input-button trail-button' style={{width:"auto"}}>
                                 LET'S TRY IT OUT
                             </div>
-                </div> */}
+                </div> 
                 </div>
                 <div className='header-image'>
                 <img 
@@ -411,6 +412,48 @@ const FooterSection = () =>{
     }
 }
 
+function closeNav(){
+    let elem:any = document.getElementById("mySidenav");
+    elem.style.width = "0px";
+}
+
+function openNav() {
+    let elem:any = document.getElementById("mySidenav");
+    elem.style.width = "430px";
+    // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+
+const SideNavbar = () =>{
+    try {
+        return(<>
+        <div id="mySidenav" className="sidenav">
+            <div  className="closebtn" onClick={()=>closeNav()}>
+            <CloseOutlined />
+            </div>
+<hr style={{color:"rgb(215, 215, 215)",opacity:0.4}}/>
+        {navbarContent.map((item:any)=>(
+            <>
+              <a href={item.id} onClick={()=>closeNav()}>{item.name}</a>
+              <hr style={{color:"rgb(215, 215, 215)",opacity:0.2}}/>
+            </>
+        ))}
+
+                <div className='trail-button' style={{width:"auto",margin:"20px",color:"white"}}>
+                        14 DAY FREE TRAIL
+                </div>
+
+            <div style={{display:"flex",justifyContent:"center"}}>
+                    Login
+            </div>
+
+</div>
+        </>)
+    } catch (error) {
+        console.log("eror in SideNavbar",error);
+        
+    }
+}
+
 return(<>
     {HeaderSection()}
     {BodySection()}
@@ -419,5 +462,6 @@ return(<>
     {CustomerSection()}
     {/* {ScrollingSection()} */}
     {FooterSection()}
+    {SideNavbar()}
 </>)
 }
