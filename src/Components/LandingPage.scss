@@ -125,8 +125,7 @@
 }
 
 .body-section{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 90px 40px;
     position: relative;
     background: rgb(247 247 247/1);
     .heading{
@@ -185,7 +184,7 @@
     background: rgb(247 247 247/1);
     .header-content{
         text-align: center;    
-        padding: 40px;
+        padding: 90px 40px;
 
     }
     .platform-content{
@@ -210,14 +209,14 @@
 .customer-container{
     .header-section{
         text-align: center;
-        margin-inline: 50px;
+        padding: 40px 40px;
+        
 
     }
     .user-card-carousal{
         display: flex;
         justify-content: space-between;
         margin-inline: 100px;   
-        margin-top: 60px;
     }
     .user-button{
         padding: 1rem 1.7rem;
@@ -306,12 +305,12 @@
   }
   
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 20px;
     text-decoration: none;
-    // font-size: 25px;
-    // color: #818181;
     display: block;
     transition: 0.3s;
+    color: rgb(16 20 32 / 1);
+    font-size: 15px;
   }
   
   .sidenav a:hover {
@@ -327,7 +326,7 @@
   }
   
   @media screen and (max-height: 450px) {
-    .sidenav a {font-size: 18px;}
+    .sidenav a {font-size: 15px}
   }
 
   ///
@@ -406,6 +405,9 @@
     .feature-section{
         .feature-details-card{
             grid-template-columns: 1fr;
+        }
+        .heading{
+            padding: 70px 50px;
         }
     }
     .header .header-company-details{

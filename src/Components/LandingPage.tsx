@@ -434,7 +434,7 @@ function openNav() {
     if (mediaSize.matches) { // If media query matches
         elem.style.width = "100%";
       } else {
-        elem.style.width = "430px";
+        elem.style.width = "550px";
       }
    
     // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
