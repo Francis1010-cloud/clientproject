@@ -66,6 +66,9 @@
     }
     .header-company-content{
         display: flex;
+        .horizontal-line{
+            display: none;
+        }
     }
 
 .header-content{
@@ -75,17 +78,17 @@
     grid-template-columns: 1fr 1.4fr;
         .email-field{
             display: grid;
-            gap: 1rem;
+            gap: 10px;
             grid-template-columns: 1fr 1fr;
         }
         .email-field input{
-            padding: 1rem;
-            width: 17rem;
+            padding: 15px;
+            width: auto;
         }
         .email-field input::placeholder{
             opacity: 0.5;
             font-size: 17px;
-            line-height: 2rem;
+            line-height: 15px;
         }
 }
 .opacity-low{
@@ -324,7 +327,6 @@
   }
   
   @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
 
@@ -410,15 +412,17 @@
         grid-template-columns : 1fr;
         padding: 39px 100px;
         text-align: center;
-        
-    }   .header .header-company-content{
+        row-gap: 35px;     
+    }   
+    .header .header-company-content{
         display: block;
+        .horizontal-line{
+            display: block;
+        }
        }
+
     .vertical-line{
         display: none;
-    }
-    .horizontal-line{
-        display: block;
     }
 }
 
@@ -442,5 +446,8 @@
     .platform-section .platform-card-container{
         height: 100%;
         margin-top: 50px;
+    }
+    .header .header-content .email-field{
+        grid-template-columns: 1fr;
     }
 }

@@ -16,7 +16,7 @@ const CardDesign = () =>{
                 <img src={Icon} alt="sampleimage"/>
             </div>}
             
-            <div>      
+            <div className='font'>      
                 <h2>{Title}</h2> 
             </div>
 

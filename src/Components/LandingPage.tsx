@@ -76,6 +76,7 @@ const handleScroll = () => {
     let atagElement = navelement[0].getElementsByTagName("a");
     let menuIcon:any = document.getElementsByClassName("menu-icon");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      setHeaderLogoimg("app-main-icon.svg")
       element.style.background="white";
       element.style.borderBottom = "1px solid lightgrey";
         menuIcon[0].style.color = "black"
@@ -84,6 +85,7 @@ const handleScroll = () => {
       }
       
     }else{
+        setHeaderLogoimg("app-main-icon-white.svg")
         element.style.borderBottom ="none";
         element.style.background="rgb(2 10 25/1)";
       element.style.color="white";
@@ -135,7 +137,7 @@ const HeaderSection = () =>{
                         Focus on the big picture while Hexnode works on the details.</p>
                      <div className='email-field'>
                             <input placeholder='Email'/>
-                            <div className='input-button trail-button' style={{width:"auto"}}>
+                            <div className='trail-button' style={{width:"auto"}}>
                                 LET'S TRY IT OUT
                             </div>
                 </div> 
@@ -147,8 +149,7 @@ const HeaderSection = () =>{
     width="100%" 
     height="100%" 
     decoding="async" 
-    style={{color:"transparent"}}
-    srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=640&q=90 1x, https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90 2x" 
+    style={{color:"transparent"}} 
     src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90"
 />
                 </div>
@@ -460,7 +461,7 @@ return(<>
     {FeatureSection()}
     {MultiPlatformSection()}
     {CustomerSection()}
-    {/* {ScrollingSection()} */}
+    {ScrollingSection()}
     {FooterSection()}
     {SideNavbar()}
 </>)

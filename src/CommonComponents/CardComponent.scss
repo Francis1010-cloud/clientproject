@@ -42,3 +42,14 @@
         display: block;
     }
 }
+
+.font{
+    font-size: 17px;
+}
+
+
+@media only screen and (max-width: 660px) {
+    .font{
+        font-size: 13px;
+    }
+}
