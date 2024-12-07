@@ -39,7 +39,7 @@
         z-index: 1;
         .nav-bar{
             display: flex;
-            gap: 1rem;
+            gap: 30px;
             align-items: center;
             color: white;
         }
@@ -168,7 +168,7 @@
 .feature-section{
     .heading{
         text-align: center;
-        padding: 70px 200px;
+        padding: 80px 200px;
     }
     .feature-details-card{
             display: grid;
@@ -216,7 +216,7 @@
     .user-card-carousal{
         display: flex;
         justify-content: space-between;
-        margin-inline: 100px;   
+        margin-inline: 90px;   
     }
     .user-button{
         padding: 1rem 1.7rem;
