@@ -11,10 +11,8 @@ return(<>
     loading="lazy" 
     width="100%" 
     height="100%" 
-    decoding="async" 
-    srcSet="https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/zero-touch.jpg?w=384&q=100 1x, 
-            https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/zero-touch.jpg?w=828&q=100 2x" 
-    src="https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/zero-touch.jpg?w=828&q=100">
+    decoding="async"
+    src={Icon}>
         </img>
 </div>
                 <div className='font-bold'>{Title}</div>

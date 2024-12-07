@@ -36,8 +36,7 @@
         transition: 0.5s;
         position: fixed;
         width: -webkit-fill-available;
-        z-index: 1;   
-         border-bottom: 1px solid black;
+        z-index: 1;
         .nav-bar{
             display: flex;
             gap: 1rem;
@@ -106,7 +105,7 @@
 
 .trail-button{
     background: red;
-    border-radius: 3px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     width: fit-content;
@@ -114,7 +113,10 @@
     transition: 0.3s;
     white-space: nowrap;
     align-items: center;
+    font-weight: 400;
+    padding: 10px 27px;
 }
+
 .trail-button:hover{
     opacity: 0.8;
 }

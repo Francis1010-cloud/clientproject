@@ -42,12 +42,12 @@ export default function LandingPage() {
             {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/tvOS.jpg",icon:"",title:"tvOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}, 
             {src:"https://static.hexnode.com/v2/assets/img/ads-pages/multi-platforms/fireOS.jpg",icon:"",title:"FireOS",content:"Remotely deploy, manage, monitor and secure Android devices in your organization. Set compliance benchmarks and leverage Android Enterprise to it’s full capabilities."}]
 
-
-    const featureDetails = [{icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},{icon:" image ",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
-        {icon:"./images/zero-touch.svg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."}
+    const featureDetails = [{icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/zero-touch.jpg",title:"Zero-touch Enrollment",content:"Onboard endpoints and users with minimal user intervention. Provision devices and set up configurations well before the user gets their hands on."},
+        {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/automation.jpg",title:"Automation",content:"Automate endpoint compliance with dynamic grouping and breeze through day-to-day IT tasks with scripting capabilities. Hexnode also allows the creation of automated reports."},
+        {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/remote-access.jpg",title:"Remote Access Management",content:"Hexnode UEM enables the enterprise to manage every single device in the corporate ecosystem for optimal and secure operation."},
+        {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/endpoint-security.jpg",title:"Endpoint Security and Compliance",content:"Hexnode helps you maintain compliance with international regulatory bodies and set up custom rules for compliance within your business for security purposes."},
+        {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/integrations.jpg",title:"Integrations",content:"Hexnode's various integrations make it easy to fit into your current endpoint ecosystem. These integrations include Azure AD, Okta, Android Enterprise, Apple School and Business manager, and many more enterprise and technology integrations."},        
+        {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/app-management.jpg",title:"App Management",content:"Set up a bespoke app store, enable mandatory apps, and ensure endpoints come equipped with all the required applications, custom enterprise apps included."}
     ]
 
     const userDetails = [{  image:"https://static.hexnode.com/v2/assets/img/customer-images/dalibor-kruljac.png?w=1200&q=80",
@@ -83,7 +83,7 @@ const handleScroll = () => {
       }
       
     }else{
-        element.style.borderBottom = "1px solid black";
+        element.style.borderBottom ="none";
         element.style.background="rgb(2 10 25/1)";
       element.style.color="white";
        menuIcon[0].style.color = "white"
@@ -113,7 +113,7 @@ const HeaderSection = () =>{
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
                     <div style={{fontWeight:"bolder"}}>
-                       hexnode
+                    <img src="./images/file-correct-icon.svg" alt="hexnode-logo"/>
                         </div>
                         {navbarContent.map((item:any)=>(<>
                         <a href={item.id}>{item.name} </a>  
@@ -205,13 +205,13 @@ const BodySection = () =>{
                    Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
                   />
                 </div>
-            
-                   <CardComponent 
+                <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/sample.svg"}
-                   Title = {"Adapt to the new normal"}
-                   Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
+                   Icon = {"/images/play-setting-icon.svg"}
+                   Title = {"Get more done with automation"}
+                   Content = {"Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes."}
                   />
+                  
             </div>
             <div className="column center-icon">
                 <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
@@ -219,20 +219,20 @@ const BodySection = () =>{
             <div 
             className="column">
                 <div style={{marginBottom:"70px"}}>
-
                 <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/sample.svg"}
-                   Title = {"Adapt to the new normal"}
-                   Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
+                   Icon = {"/images/tick-icon.svg"}
+                   Title = {"Zero compromise security"}
+                   Content = {"Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises."}
                   />
+               
                 </div>
                 
                    <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/sample.svg"}
-                   Title = {"Adapt to the new normal"}
-                   Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
+                   Icon = {"/images/file-correct-icon.svg"}
+                   Title = {"Unified Policy Management"}
+                   Content = {"Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achive single pane of glass management with Hexnode."}
                   />
             </div>
             </div>
