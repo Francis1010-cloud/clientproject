@@ -156,13 +156,14 @@ const HeaderSection = () =>{
                 <img 
     alt="Hexnode UEM" 
     fetchPriority="high" 
-    width="100%" 
-    height="100%" 
+    width="95%" 
+    height="95%" 
     decoding="async" 
     style={{color:"transparent"}} 
     src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90"
 />
                 </div>
+                
             </div>
             <div className='header-company'>
             <div className='header-company-details'> 
