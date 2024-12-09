@@ -80,14 +80,15 @@ function hoverMethod(){
         hoverElement.addEventListener("mouseenter", function() {
             if (document.body.scrollTop < 20 && document.documentElement.scrollTop <  20) {
                 setHeaderLogoimg("app-main-icon.svg")
+                changeNavBarColor("black");
             }
            
 })
         hoverElement.addEventListener("mouseleave", function() {
             
             if (document.body.scrollTop < 20 && document.documentElement.scrollTop <  20) {
-                console.log("into")
-                setHeaderLogoimg("app-main-icon-white.svg")
+                setHeaderLogoimg("app-main-icon-white.svg");
+                changeNavBarColor("white");
             }
            
         })
@@ -122,7 +123,7 @@ const handleScroll = () => {
     }else{
         setHeaderLogoimg("app-main-icon-white.svg")
         element.style.borderBottom ="none";
-        element.style.background="rgb(2 10 25/1)";
+        element.style.background="";
       element.style.color="white";
        menuIcon[0].style.color = "white"
       for(let item of atagElement){
@@ -130,6 +131,16 @@ const handleScroll = () => {
       }
     }
   };
+
+
+  const changeNavBarColor = (color:string) =>{
+    let element:any = document.getElementById("header");
+    let navelement:any = element.getElementsByClassName("nav-bar");
+    let atagElement = navelement[0].getElementsByTagName("a");
+    for(let item of atagElement){
+        item.style.color=color;
+      }
+  }
 
 
 const scrollFunction = () =>{
