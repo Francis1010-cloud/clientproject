@@ -111,11 +111,16 @@ const handleScroll = () => {
     let navelement:any = element.getElementsByClassName("nav-bar");
     let atagElement = navelement[0].getElementsByTagName("a");
     let menuIcon:any = document.getElementsByClassName("menu-icon");
+    let scrollNav:any = document.getElementsByClassName("scroll-nav");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       setHeaderLogoimg("app-main-icon.svg")
       element.style.background="white";
       element.style.borderBottom = "1px solid lightgrey";
-        menuIcon[0].style.color = "black"
+        menuIcon[0].style.color = "black";
+       if(window.matchMedia("(max-width: 1240px)").matches){
+        scrollNav[0].style.visibility = "visible";
+       }
+       
       for(let item of atagElement){
         item.style.color="black";
       }
@@ -124,6 +129,10 @@ const handleScroll = () => {
         setHeaderLogoimg("app-main-icon-white.svg")
         element.style.borderBottom ="none";
         element.style.background="";
+        if( window.matchMedia("(max-width: 1240px)").matches){
+            scrollNav[0].style.visibility = "hidden";
+        }
+        
       element.style.color="white";
        menuIcon[0].style.color = "white"
       for(let item of atagElement){
@@ -166,7 +175,7 @@ const HeaderSection = () =>{
                     
                 </div>
                         {navbarContent.map((item:any)=>(<>
-                        <a className='hide-nav' href={item.id}>{item.name} </a>  
+                        <a className='hide-nav' href={item.id} key={item.id}>{item.name} </a>  
                         </>))}
                     </div>
                 <div className='trail-button'>
@@ -175,7 +184,12 @@ const HeaderSection = () =>{
                 <div className="menu-icon"  onClick={()=>openNav()}>
                   <MenuOutlined />
                 </div>
-            </div>
+                </div>
+                <div className='scroll-nav'>
+                     <div className='trail-button'>
+                        14 DAY FREE TRAIL
+                </div>
+                </div>
             <div className='header-content'>
                 <div className='header-details'>
                     <div className='opacity-low'>Unified Endpoint Management</div>
@@ -192,7 +206,6 @@ const HeaderSection = () =>{
                 <div className='header-image'>
                 <img 
     alt="Hexnode UEM" 
-    fetchPriority="high" 
     width="95%" 
     height="95%" 
     decoding="async" 
@@ -204,8 +217,8 @@ const HeaderSection = () =>{
             </div>
             <div className='header-company'>
             <div className='header-company-details'> 
-                    {headerCompanyList.map((item:any,index)=>(<>
-                    <div>
+                    {headerCompanyList.map((item:any,index:number)=>(<>
+                    <div key={index}>
                     <img alt="IDC" src={item.src} width={item.width} height={item.height} loading="lazy" />
                         <div className={index != headerCompanyList?.length - 1 ? "header-company-content" : ""}>
                         <p>{item.details}</p> 
@@ -309,6 +322,7 @@ const FeatureSection = () =>{
             <div className='feature-details-card'>
             {featureDetails.map((item:any)=>(<>
                 <FeatureCardComponent
+                key={item.id}
              Icon = {item.icon}
              Title = {item.title}
              Content = {item.content}/>
@@ -335,10 +349,9 @@ const MultiPlatformSection = () =>{
             <div className="platform-content">
                 <div className="platform-image">
                 <img 
+                className='image'
+                style={{borderRadius:"30px"}}
     alt="Android Management with Hexnode UEM" 
-    fetchPriority="high" 
-    width="100%" 
-    height="auto" 
     decoding="async" 
     src={platformDetails[selectedPlatformIndex].src}
     />
@@ -351,13 +364,14 @@ const MultiPlatformSection = () =>{
                 {platformDetails.map((item:any,index:number)=>(<>
                 {index == selectedPlatformIndex ?  <>
                     <CardComponent 
+                    key={index}
                     classname="alternate-card-container"
                    Icon = {item.icon}
                    Title = {item.title}
                    Content = {item.content}
                   />
                 </>  : <>
-                <div style={{marginInline:"1rem",cursor:"pointer"}} onClick={()=>setSelectedPlatformIndex(index)}>
+                <div   key={index} style={{marginInline:"1rem",cursor:"pointer"}} onClick={()=>setSelectedPlatformIndex(index)}>
                     <h3 style={{fontSize:"24px"}}>{item.title}</h3>
                     <div className="horizontal-line"></div>
                     </div>
@@ -513,9 +527,9 @@ const SideNavbar = () =>{
             <CloseOutlined />
             </div>
 <hr style={{color:"rgb(215, 215, 215)",opacity:0.4}}/>
-        {navbarContent.map((item:any)=>(
+        {navbarContent.map((item:any,index:number)=>(
             <>
-              <a href={item.id} onClick={()=>closeNav()}>{item.name}</a>
+              <a href={item.id} onClick={()=>closeNav()}  key={index}>{item.name}</a>
               <hr style={{color:"rgb(215, 215, 215)",opacity:0.2}}/>
             </>
         ))}

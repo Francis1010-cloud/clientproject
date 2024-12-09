@@ -7,6 +7,7 @@
 
 
 .border-top-right {
+  display: block;
     left: 51%;
     top: 37%;
     height: 170px;
@@ -31,6 +32,7 @@
   }
 
   .border-bottom-left {
+    display: block;
     position: absolute;
     top: 57%;
     left: 32%;
@@ -56,6 +58,7 @@
 
 
   .border-top-left {
+    display: block;
     height: 175px;
     width: 200px;
     clip-path: inset(0 0 0 169px);
@@ -81,6 +84,7 @@
 
 
   .border-bottom-right {
+    display: block;
     top: 57%;
     left: 51%;
     position: absolute;

@@ -44,6 +44,19 @@
             color: white;
         }
     }
+    .scroll-nav{
+        margin-top: 70px;
+        display: flex;
+        justify-content: flex-end;
+        position: fixed;
+        width: -webkit-fill-available;
+        background-color: white;
+        padding: 20px 70px;    
+        transition: 0.5s;
+        z-index: 9999;
+        visibility: hidden;
+        border-top: 1px solid rgb(215, 215, 215);
+    }
     .header-details{
         margin-block: auto;
         order: 1;
@@ -150,9 +163,6 @@
         align-items: center;
         justify-content: center;
     }
-    .border-top-right{
-        display: block;
-       }
   .row{
     display: flex;
     justify-content: center;
@@ -204,6 +214,10 @@
     .platform-image{
         border-radius: 1rem;
         margin-inline: 32px;
+        .image{
+            height: auto;
+            width: 100%;
+        }
     }
     .platform-card-container{
         overflow-y: scroll;
@@ -375,6 +389,7 @@
     .body-section .row{
         flex-flow: column;
         align-items: center;
+        margin-inline: 0px;
     }
     .feature-section{
         .feature-details-card{
@@ -397,6 +412,15 @@
         display: none;
        }
        .border-top-right{
+        display: none;
+       }
+       .border-top-left{
+        display: none;
+       }
+       .border-bottom-left{
+        display: none;
+       }
+       .border-bottom-right{
         display: none;
        }
    }
