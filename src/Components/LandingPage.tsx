@@ -5,6 +5,7 @@ import CardComponent from '../CommonComponents/CardComponent';
 import FeatureCardComponent from '../CommonComponents/FeatureCardComponent';
 import UserCardCompnent from '../CommonComponents/UserCardComponent';
 import './LandingPage.scss';
+import '../CommonComponents/Dashed-Keyframe.scss'
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 
 export default function LandingPage() {
@@ -235,6 +236,8 @@ const BodySection = () =>{
             {/* <div className='card-group'> */}
             <div className="border-top-right"></div>
             <div className="border-bottom-left"></div>
+            <div className='border-top-left'></div>
+            <div className='border-bottom-right'></div>
         <div className="row">
             <div className="column">
                 <div style={{marginBottom:"70px"}}>
