@@ -163,7 +163,31 @@
     display: table;
     clear: both;
   }
-}
+
+  .border-top-right {
+    left: 51%;
+    top: 31%;
+    height: 150px;
+    width: 40px;
+    position: absolute;
+    border-radius:10px;
+    background: linear-gradient(90deg, red 50%, transparent 50%), linear-gradient(0deg, white 0%, transparent 0%), linear-gradient(0deg, orange 50%, transparent 50%), linear-gradient(0deg, white 0%, transparent 0%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 15px 4px, 15px 4px, 4px 15px, 4px 15px;
+    background-position: 0px 0px, 200px 100px, 0px 100px, 200px 0px;
+    padding: 10px;
+    animation: border-dance 4s infinite linear;
+  }
+  @keyframes border-dance {
+    0% {
+      background-position: 0px 0px, 0px 0px, 0px 150px, 216px 0px;
+    }
+    100% {
+      background-position: 300px 0px, 300px 0px, 0px 0px, 216px 150px;
+    }
+  }
+  }
+            
 
 .feature-section{
     .heading{
@@ -286,6 +310,32 @@
  p{
     font-size: 15px;
     opacity: 0.6;
+}
+
+.scroll-section{
+    margin-top: 50px;
+    margin-inline: 90px;
+    mask-image: linear-gradient(to left, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0) 100%, rgb(255, 255, 255) 80%);
+    #scroll-container {
+        width: 100%;
+        overflow: hidden; /* Hide anything that overflows */
+        position: relative;
+      }
+      
+      #scroll-text {
+        display: flex; /* Arrange images in a row */
+        animation: scroll 20s linear infinite; /* Apply scrolling animation */
+      }
+      
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%); /* Start at the far right */
+        }
+        100% {
+          transform: translateX(-100%); /* End at the far left */
+        }
+      }
+         
 }
 
 

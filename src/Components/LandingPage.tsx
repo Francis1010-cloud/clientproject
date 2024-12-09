@@ -69,7 +69,31 @@ export default function LandingPage() {
 useEffect(()=>{
     scrollFunction();
     watchMediaSize();
+    hoverMethod();
 },[]);
+
+function hoverMethod(){
+    try {
+        
+        const hoverElement:any = document.getElementById("header");
+        hoverElement.addEventListener("mouseenter", function() {
+            if (document.body.scrollTop < 20 && document.documentElement.scrollTop <  20) {
+                setHeaderLogoimg("app-main-icon.svg")
+            }
+           
+})
+        hoverElement.addEventListener("mouseleave", function() {
+            
+            if (document.body.scrollTop < 20 && document.documentElement.scrollTop <  20) {
+                console.log("into")
+                setHeaderLogoimg("app-main-icon-white.svg")
+            }
+           
+        })
+    } catch (error) {
+        
+    }
+}
 
 function watchMediaSize(){
     try {
@@ -122,11 +146,12 @@ const HeaderSection = () =>{
     try {
         return(
             <>
-            <div className='header'>
+            <div className='header' id="top-section">
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
                     <div style={{width:"100px",height:"auto"}}>
-                    <img src={`./images/${headerLogoimg}`} alt="Logo" />
+                        <a href='#top-section'><img src={`./images/${headerLogoimg}`} alt="Logo" /></a>
+                    
                 </div>
                         {navbarContent.map((item:any)=>(<>
                         <a href={item.id}>{item.name} </a>  
@@ -208,6 +233,8 @@ const BodySection = () =>{
                 <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
             </div> */}
             {/* <div className='card-group'> */}
+            <div className="border-top-right"></div>
+            <div className="border-bottom-left"></div>
         <div className="row">
             <div className="column">
                 <div style={{marginBottom:"70px"}}>
@@ -383,7 +410,31 @@ const CustomerSection = () =>{
 const ScrollingSection = () =>{
     try {
         return(<>
-        ScrollingSection
+        <div className="scroll-section">
+ <div id='scroll-container'>
+<div id="scroll-text">
+    <img src='https://static.hexnode.com/v2/assets/img/logos/dark-logo/saic.svg'/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/costco.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/marriott-intl.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/hilton.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/lowes.svg"/>
+    <img src='https://static.hexnode.com/v2/assets/img/logos/dark-logo/saic.svg'/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/costco.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/marriott-intl.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/hilton.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/lowes.svg"/>
+    <img src='https://static.hexnode.com/v2/assets/img/logos/dark-logo/saic.svg'/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/costco.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/marriott-intl.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/hilton.svg"/>
+    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/lowes.svg"/>
+
+
+
+    
+</div>
+ </div>
+        </div>
         </>)
     } catch (error) {
         console.log("error in ScrollingSection",error);
