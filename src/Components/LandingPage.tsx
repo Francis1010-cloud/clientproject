@@ -154,7 +154,7 @@ const HeaderSection = () =>{
                     
                 </div>
                         {navbarContent.map((item:any)=>(<>
-                        <a href={item.id}>{item.name} </a>  
+                        <a className='hide-nav' href={item.id}>{item.name} </a>  
                         </>))}
                     </div>
                 <div className='trail-button'>
@@ -254,7 +254,7 @@ const BodySection = () =>{
                   
             </div>
             <div className="column center-icon">
-                <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
+                <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo" style={{zIndex:1}}/>
             </div>
             <div 
             className="column">

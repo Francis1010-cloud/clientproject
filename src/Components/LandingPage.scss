@@ -15,7 +15,7 @@
         .nav-bar{
             color: black;
         }
-        .nav-bar a{
+        .nav-bar .hide-nav{
             color: black;
         }
         :hover{
@@ -101,7 +101,7 @@
 }
 
 
-.nav-bar a{
+.nav-bar .hide-nav{
     color: white;
     text-decoration: none;
 }
@@ -150,6 +150,9 @@
         align-items: center;
         justify-content: center;
     }
+    .border-top-right{
+        display: block;
+       }
   .row{
     display: flex;
     justify-content: center;
@@ -167,7 +170,7 @@
   .border-top-right {
     left: 51%;
     top: 31%;
-    height: 150px;
+    height: 170px;
     width: 40px;
     position: absolute;
     border-radius:10px;
@@ -412,6 +415,9 @@
     .center-icon{
         display: none;
        }
+       .border-top-right{
+        display: none;
+       }
    }
 
    .header .header-details{
@@ -426,7 +432,7 @@
     .nav-bar{
         color: black;
     }
-    .nav-bar a{
+    .nav-bar .hide-nav{
         display: none;
        }
        .menu-icon{
