@@ -1,12 +1,13 @@
 .card-container{
     border: 1px solid rgb(215 215 215/1);
-    padding: 35px;
+    padding: 12px 33px;
     border-radius: 15px;
     transition: 1s;
     background-color: white;
     .card-header{
         display: flex;
        align-items: center;   
+       gap: 15px;
     }
     p{
         line-height: 1.7rem;
@@ -23,17 +24,12 @@
 
 .alternate-card-container{
     border: 1px solid rgb(215 215 215/1);
-    padding: 22px;
+    padding-inline: 25px;
     border-radius: 15px;
     background-color: white;
     margin-inline: 8px;
-    .card-header{
-        display: flex;
-       align-items: center;   
-    }
     p{
         line-height: 1.8rem;
-        font-size: 17px;
         opacity: 0.8;
     }
     .hover-text{

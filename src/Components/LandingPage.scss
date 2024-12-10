@@ -132,10 +132,6 @@
     color: white;
     text-decoration: none;
 }
-// .trail-button-alter{
-//     float: left;
-//     margin-right: 20px;
-// }
 
 .trail-button{
     background: rgb(221 7 53/1);
@@ -266,7 +262,6 @@
         cursor: pointer;
     }
     .user-side-button{
-        // visibility: visible;
         display: block;
     }
     .user-button:disabled{
@@ -321,7 +316,7 @@
  .horizontal-line{
     border-bottom:1px solid rgb(215, 215, 215);
     width: 98%;
-    opacity: 0.2;
+    opacity: 1.2;
  }
  p{
     font-size: 18px;
@@ -356,7 +351,6 @@
 }
 
 
-////
 
 .sidenav {
     height: 100%;
@@ -396,7 +390,6 @@
     .sidenav a {font-size: 15px}
   }
 
-  ///
 
 
 
@@ -421,9 +414,6 @@
   @media only screen and (max-width: 1240px) {
    .header .header-content{
         grid-template-columns: 1fr;
-        // padding-inline: 280px;_
-        // width: 750px;
-        // margin: auto;
    } 
 
    .body-section{
@@ -446,7 +436,6 @@
 
    .header .header-details{
         text-align: center;
-        // margin-inline: 225px;
         order: 2;
    }
    .header .header-section{
