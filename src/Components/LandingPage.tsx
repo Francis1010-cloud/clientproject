@@ -227,9 +227,9 @@ const HeaderSection = () =>{
             <div className='header-company'>
             <div className='header-company-details'> 
                     {headerCompanyList.map((item:any,index:number)=>(<>
-                    <div key={index}>
+                    <div key={index} className="company-card">
                     <img alt="Company" src={item.src} width={item.width} height={item.height} loading="lazy" />
-                        <div className={index != headerCompanyList?.length - 1 ? "header-company-content" : ""}>
+                        <div className="header-company-content">
                         <p>{item.details}</p> 
                                                    {index != headerCompanyList?.length - 1 && <>
 

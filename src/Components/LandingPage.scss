@@ -73,19 +73,26 @@
     .header-company-details{
         display: grid;
             grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
-            // column-gap: 153px;
             padding: 39px 50px;
             font-size: 16px;
-            line-height: 1.5rem;   
-    }
-    p{
-        font-size: 14px;
-        opacity: 0.6;
+            line-height: 1.5rem;  
+            .company-card{
+                cursor: pointer;
+                transition: 0.6s;
+            }
+            .company-card:hover{
+                transform: translateZ(10px);
+            } 
     }
     .header-company-content{
         display: flex;
+        width: 79%;
         .horizontal-line{
             display: none;
+        }
+        p{
+            font-size: 14px;
+            opacity: 0.6;
         }
     }
 
@@ -491,6 +498,7 @@
     }   
     .header .header-company-content{
         display: block;
+        width: 100%;
         .horizontal-line{
             display: block;
             margin-top: 45px;
