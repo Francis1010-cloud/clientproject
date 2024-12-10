@@ -116,11 +116,7 @@ const handleScroll = () => {
       setHeaderLogoimg("app-main-icon.svg")
       element.style.background="white";
       element.style.borderBottom = "1px solid lightgrey";
-        menuIcon[0].style.color = "black";
-       if(window.matchMedia("(max-width: 1240px)").matches){
-        scrollNav[0].style.visibility = "visible";
-       }
-       
+      menuIcon[0].style.color = "black";
       for(let item of atagElement){
         item.style.color="black";
       }
@@ -129,15 +125,21 @@ const handleScroll = () => {
         setHeaderLogoimg("app-main-icon-white.svg")
         element.style.borderBottom ="none";
         element.style.background="";
-        if( window.matchMedia("(max-width: 1240px)").matches){
-            scrollNav[0].style.visibility = "hidden";
-        }
-        
       element.style.color="white";
        menuIcon[0].style.color = "white"
       for(let item of atagElement){
         item.style.color="white";
       }
+    }
+
+    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+        console.log("in t");
+        
+        if(window.matchMedia("(max-width: 740px)").matches){
+            scrollNav[0].style.visibility = "visible";
+           }
+    }else{
+        scrollNav[0].style.visibility = "hidden";
     }
   };
 
@@ -183,6 +185,9 @@ const HeaderSection = () =>{
                 </div>
                 <div className="menu-icon"  onClick={()=>openNav()}>
                   <MenuOutlined />
+                  {/* <div className='trail-button trail-button-alter'>
+                        14 DAY FREE TRAIL
+                </div> */}
                 </div>
                 </div>
                 <div className='scroll-nav'>
@@ -206,8 +211,8 @@ const HeaderSection = () =>{
                 <div className='header-image'>
                 <img 
     alt="Hexnode UEM" 
-    width="95%" 
-    height="95%" 
+    width="100%" 
+    height="100%" 
     decoding="async" 
     style={{color:"transparent"}} 
     src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg?w=1920&q=90"

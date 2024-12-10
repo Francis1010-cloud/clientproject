@@ -33,7 +33,7 @@
         display: flex;
         justify-content: space-between;
         padding:20px 70px;
-        transition: 0.5s;
+        transition: 0.8s;
         position: fixed;
         width: -webkit-fill-available;
         z-index: 9999;
@@ -118,6 +118,10 @@
     color: white;
     text-decoration: none;
 }
+// .trail-button-alter{
+//     float: left;
+//     margin-right: 20px;
+// }
 
 .trail-button{
     background: rgb(221 7 53/1);
@@ -306,18 +310,19 @@
     // margin-block: 44px;
  }
  p{
-    font-size: 15px;
-    opacity: 0.6;
+    font-size: 18px;
+    opacity: 0.8;
 }
 
 .scroll-section{
     margin-top: 50px;
-    margin-inline: 90px;
+    margin-inline: 100px;
     mask-image: linear-gradient(to left, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0) 100%, rgb(255, 255, 255) 80%);
     #scroll-container {
         width: 100%;
         overflow: hidden; /* Hide anything that overflows */
         position: relative;
+        mask-image: linear-gradient(to right, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0) 100%, rgb(255, 255, 255) 80%);
       }
       
       #scroll-text {
