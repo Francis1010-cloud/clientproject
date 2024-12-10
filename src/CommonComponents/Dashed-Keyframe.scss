@@ -4,19 +4,20 @@
     --keyframe-width : 200px;
     --app-color : black;
     --app-top:39%;
-    --app-left:32%
+    --app-left:32%;
+    --app-border-radius:10px;
     }
 
 
 .border-top-right {
   display: block;
+  overflow: hidden;
     left: 51%;
     top: var(--app-top);
     height: 170px;
     width: 40px;
-    border-radius: 10px;
+    border-radius: var(--app-border-radius);
     position: absolute;
-    border-radius:10px;
     background: linear-gradient(90deg, var(--app-color) 50%, transparent 50%), linear-gradient(0deg, white 0%, transparent 0%), linear-gradient(0deg, var(--app-color) 50%, transparent 50%), linear-gradient(0deg, white 0%, transparent 0%);
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
     background-size:15px 2px, 15px 2px, 2px 15px, 4px 15px;
@@ -34,11 +35,12 @@
   }
 
   .border-bottom-left {
+    overflow: hidden;
     display: block;
     position: absolute;
     top: 57%;
     left: var(--app-left);
-    border-radius: 10px;
+    border-radius: var(--app-border-radius);
     height: var(--keyframe-height);
     width: var(--keyframe-width);
     clip-path: inset(0 0 0 168px);
@@ -60,13 +62,14 @@
 
 
   .border-top-left {
+    overflow: hidden;
     display: block;
     height: 175px;
     width: 200px;
     clip-path: inset(0 0 0 169px);
     top: var(--app-top);
     left: var(--app-left);  
-    border-radius: 10px;
+    border-radius: var(--app-border-radius);
     position: absolute;
     background: linear-gradient(90deg, var(--app-color) 50%, transparent 50%), linear-gradient(0deg, orange 0%, transparent 0%), linear-gradient(0deg, blue 0%, transparent 0%), linear-gradient(0deg, var(--app-color) 50%, transparent 50%);
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
@@ -86,13 +89,14 @@
 
 
   .border-bottom-right {
+    overflow: hidden;
     display: block;
     top: 57%;
     left: 51%;
     position: absolute;
     height: 98px;
     width: 39px;
-    border-radius: 10px;
+    border-radius: var(--app-border-radius);
     background: linear-gradient(0deg, blue 0%, transparent 0%), linear-gradient(90deg, var(--app-color) 50%, transparent 50%), linear-gradient(0deg, var(--app-color) 50%, transparent 50%), linear-gradient(0deg, yellow 0%, transparent 0%);
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
     background-size:25px 2px, 22px 2px, 2px 19px, 2px 20px;

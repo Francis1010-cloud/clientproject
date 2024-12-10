@@ -207,7 +207,7 @@ const HeaderSection = () =>{
                         Focus on the big picture while Hexnode works on the details.</p>
                      <div className='email-field'>
                             <input placeholder='Email'/>
-                            <div className='trail-button' style={{width:"auto"}}>
+                            <div className='trail-button' style={{width:"auto",fontSize:"large"}}>
                                 LET'S TRY IT OUT
                             </div>
                 </div> 
