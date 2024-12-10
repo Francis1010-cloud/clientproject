@@ -2,14 +2,16 @@
 :root{
     --keyframe-height : 98px;
     --keyframe-width : 200px;
-    --app-color : black
+    --app-color : black;
+    --app-top:39%;
+    --app-left:32%
     }
 
 
 .border-top-right {
   display: block;
     left: 51%;
-    top: 37%;
+    top: var(--app-top);
     height: 170px;
     width: 40px;
     border-radius: 10px;
@@ -35,7 +37,7 @@
     display: block;
     position: absolute;
     top: 57%;
-    left: 32%;
+    left: var(--app-left);
     border-radius: 10px;
     height: var(--keyframe-height);
     width: var(--keyframe-width);
@@ -62,8 +64,8 @@
     height: 175px;
     width: 200px;
     clip-path: inset(0 0 0 169px);
-    top: 37%;
-    left: 32%;  
+    top: var(--app-top);
+    left: var(--app-left);  
     border-radius: 10px;
     position: absolute;
     background: linear-gradient(90deg, var(--app-color) 50%, transparent 50%), linear-gradient(0deg, orange 0%, transparent 0%), linear-gradient(0deg, blue 0%, transparent 0%), linear-gradient(0deg, var(--app-color) 50%, transparent 50%);
