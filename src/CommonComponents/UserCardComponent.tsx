@@ -12,6 +12,7 @@ export default function UserCardCompnent({ Image, Content, Name, Description }: 
                 <div className="user-card-container">
                     <div>
                         <img
+                        aria-label='user-photo'
                             width={"100%"}
                             height={"100%"}
                             src={Image}
