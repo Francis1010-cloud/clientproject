@@ -10,19 +10,23 @@
     }
     p{
         line-height: 1.7rem;
-        font-size: 17px;
+        font-size: 18px;
         opacity: 0.7;
     }
     .hover-text{
-        color: red;
         display: none;
+        color: rgb(221 7 53/1);
+        font-size: 17px;
+        font-weight: 600;
     }
 }
 
 .alternate-card-container{
     border: 1px solid rgb(215 215 215/1);
-    padding: 1rem;
+    padding: 22px;
     border-radius: 15px;
+    background-color: white;
+    margin-inline: 8px;
     .card-header{
         display: flex;
        align-items: center;   
@@ -33,7 +37,9 @@
         opacity: 0.8;
     }
     .hover-text{
-        color: red;
+        color: rgb(221 7 53/1);
+        font-weight: 500;
+        font-size: 21px;
     }
 }
 

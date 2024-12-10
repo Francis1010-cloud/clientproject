@@ -232,16 +232,20 @@ const HeaderSection = () =>{
                         <div className={index != headerCompanyList?.length - 1 ? "header-company-content" : ""}>
                         <p>{item.details}</p> 
                                                    {index != headerCompanyList?.length - 1 && <>
-                    
-                        <div className='vertical-line'></div>
+
                         <div className='horizontal-line'></div>
                     </> }
                         </div>
                         
                     </div>
+                    {index != headerCompanyList?.length - 1 &&  <div>
+                                            
+                                            <div className='vertical-line'></div>
+                                        </div>}
+                   
                  
                    
-                    </>))}
+                    </>))}  
             </div>
             </div>
 
@@ -376,7 +380,7 @@ const MultiPlatformSection = () =>{
                    Content = {item.content}
                   />
                 </>  : <>
-                <div   key={index} style={{marginInline:"1rem",cursor:"pointer"}} onClick={()=>setSelectedPlatformIndex(index)}>
+                <div   key={index} style={{marginInline:"32px",cursor:"pointer"}} onClick={()=>setSelectedPlatformIndex(index)}>
                     <h3 style={{fontSize:"24px"}}>{item.title}</h3>
                     <div className="horizontal-line"></div>
                     </div>
