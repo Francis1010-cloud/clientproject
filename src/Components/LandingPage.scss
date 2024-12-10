@@ -56,6 +56,7 @@
         z-index: 9999;
         visibility: hidden;
         border-top: 1px solid rgb(215, 215, 215);
+        transition: opacity 0.5s ease, visibility 0s 0s;
     }
     .header-details{
         margin-block: auto;

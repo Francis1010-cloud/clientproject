@@ -51,7 +51,11 @@ export default function LandingPage() {
         {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/endpoint-security.jpg",title:"Endpoint Security and Compliance",content:"Hexnode helps you maintain compliance with international regulatory bodies and set up custom rules for compliance within your business for security purposes."},
         {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/integrations.jpg",title:"Integrations",content:"Hexnode's various integrations make it easy to fit into your current endpoint ecosystem. These integrations include Azure AD, Okta, Android Enterprise, Apple School and Business manager, and many more enterprise and technology integrations."},        
         {icon:"https://static.hexnode.com/v2/assets/img/ads-pages/device-blog/app-management.jpg",title:"App Management",content:"Set up a bespoke app store, enable mandatory apps, and ensure endpoints come equipped with all the required applications, custom enterprise apps included."}
-    ]
+    ];
+
+    const companyLogo = [{id:1,image:"costco.svg"},{id:2,image:"marriott-intl.svg"},
+        {id:3,image:"hilton.svg"},{id:4,image:"lowes.svg"},{id:5,image:"saic.svg"},{id:6,image:"costco.svg"},{id:6,image:"costco.svg"},{id:7,image:"marriott-intl.svg"},
+        {id:8,image:"hilton.svg"},{id:9,image:"lowes.svg"},{id:10,image:"saic.svg"},{id:11,image:"costco.svg"}];
 
     const userDetails = [{  image:"https://static.hexnode.com/v2/assets/img/customer-images/dalibor-kruljac.png?w=1200&q=80",
         content : "Hexnode is of great value. Works great with Android and iOS!",
@@ -133,13 +137,13 @@ const handleScroll = () => {
     }
 
     if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-        console.log("in t");
-        
         if(window.matchMedia("(max-width: 740px)").matches){
             scrollNav[0].style.visibility = "visible";
+            scrollNav[0].style.transitiov = "opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;";
            }
     }else{
         scrollNav[0].style.visibility = "hidden";
+        scrollNav[0].style.transitiov = "opacity 0.5s ease, visibility 0s 0s";
     }
   };
 
@@ -169,11 +173,11 @@ const HeaderSection = () =>{
     try {
         return(
             <>
-            <div className='header' id="top-section">
+            <header className='header' id="top-section">
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
                     <div style={{width:"100px",height:"auto"}}>
-                        <a href='#top-section'><img src={`./images/${headerLogoimg}`} alt="Logo" /></a>
+                        <a href='#top-section'><img src={`./images/${headerLogoimg}`} alt="Header Logo" /></a>
                     
                 </div>
                         {navbarContent.map((item:any)=>(<>
@@ -224,7 +228,7 @@ const HeaderSection = () =>{
             <div className='header-company-details'> 
                     {headerCompanyList.map((item:any,index:number)=>(<>
                     <div key={index}>
-                    <img alt="IDC" src={item.src} width={item.width} height={item.height} loading="lazy" />
+                    <img alt="Company" src={item.src} width={item.width} height={item.height} loading="lazy" />
                         <div className={index != headerCompanyList?.length - 1 ? "header-company-content" : ""}>
                         <p>{item.details}</p> 
                                                    {index != headerCompanyList?.length - 1 && <>
@@ -242,7 +246,7 @@ const HeaderSection = () =>{
             </div>
 
 
-            </div>
+            </header>
             
             </>
 
@@ -257,12 +261,8 @@ const HeaderSection = () =>{
 const BodySection = () =>{
     try {
         return(<>
-        <div className="body-section" id='hexnode-body'>
+        <body className="body-section" id='hexnode-body'>
             <div className="heading font-bold">Why Hexnode?</div>
-            {/* <div className="center-div">
-                <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo"/>
-            </div> */}
-            {/* <div className='card-group'> */}
             <div className="border-top-right"></div>
             <div className="border-bottom-left"></div>
             <div className='border-top-left'></div>
@@ -309,7 +309,7 @@ const BodySection = () =>{
             </div>
             </div>
             {/* </div> */}
-        </div>
+        </body>
         </>)
     } catch (error) {
         console.log("error in BodySection",error);
@@ -407,7 +407,9 @@ const CustomerSection = () =>{
                 </div>
                 <div className='user-card-carousal'>
                     <button disabled={selectedUserIndex == 0} className='user-button user-side-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev-1))}>
-                            <img style={{opacity :  selectedUserIndex == 0 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/prev-arrow-icon-black.svg"/>
+                            <img style={{opacity :  selectedUserIndex == 0 ? "0.2" : "1"}} 
+                            alt='previous-arrow'
+                            src="https://static.hexnode.com/v2/assets/img/ads-pages/prev-arrow-icon-black.svg"/>
                     </button>
                 <UserCardCompnent 
                     Image={userDetails[selectedUserIndex].image}
@@ -416,18 +418,18 @@ const CustomerSection = () =>{
                     Description = {userDetails[selectedUserIndex].description}
                 />
                     <button disabled={selectedUserIndex == userDetails.length - 1} className='user-button user-side-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev+1))}>
-                        <img style={{opacity :  selectedUserIndex == userDetails.length - 1 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/next-arrow-icon-black.svg"/>
+                        <img alt='next-arrow' style={{opacity :  selectedUserIndex == userDetails.length - 1 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/next-arrow-icon-black.svg"/>
                     </button>
                 </div>
                 <div className='user-bottom-section'>
                     <div>
                         <button disabled={selectedUserIndex == 0} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev-1))}>
-                                <img style={{opacity :  selectedUserIndex == 0 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/prev-arrow-icon-black.svg"/>
+                                <img alt='previous-arrow' style={{opacity :  selectedUserIndex == 0 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/prev-arrow-icon-black.svg"/>
                         </button>
                     </div>
                     <div>
                         <button disabled={selectedUserIndex == userDetails.length - 1} className='user-button' onClick={()=>setSelectedUserIndex((prev:any)=>(prev+1))}>
-                                    <img style={{opacity :  selectedUserIndex == userDetails.length - 1 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/next-arrow-icon-black.svg"/>
+                                    <img  alt='next-arrow' style={{opacity :  selectedUserIndex == userDetails.length - 1 ? "0.2" : "1"}} src="https://static.hexnode.com/v2/assets/img/ads-pages/next-arrow-icon-black.svg"/>
                                 </button>
                     </div>
                     
@@ -446,24 +448,9 @@ const ScrollingSection = () =>{
         <div className="scroll-section">
  <div id='scroll-container'>
 <div id="scroll-text">
-    <img src='https://static.hexnode.com/v2/assets/img/logos/dark-logo/saic.svg'/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/costco.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/marriott-intl.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/hilton.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/lowes.svg"/>
-    <img src='https://static.hexnode.com/v2/assets/img/logos/dark-logo/saic.svg'/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/costco.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/marriott-intl.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/hilton.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/lowes.svg"/>
-    <img src='https://static.hexnode.com/v2/assets/img/logos/dark-logo/saic.svg'/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/costco.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/marriott-intl.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/hilton.svg"/>
-    <img src="https://static.hexnode.com/v2/assets/img/logos/dark-logo/lowes.svg"/>
-
-
-
+    {companyLogo.map((item:any)=>(<>
+        <img alt="scroll-image"  src={`https://static.hexnode.com/v2/assets/img/logos/dark-logo/${item.image}`} />
+    </>))}
     
 </div>
  </div>
@@ -478,6 +465,7 @@ const ScrollingSection = () =>{
 const FooterSection = () =>{
     try {
         return(<>
+        <footer>
         <div className='footer-section'>
             <div>Get Hexnode UEM and start securing your endpoints</div>
             <div className='trail-button' style={{margin:"1.5rem auto"}}>
@@ -501,6 +489,8 @@ const FooterSection = () =>{
             </div>
                 
         </div>
+        </footer>
+      
         
         </>)
     } catch (error) {
