@@ -5,7 +5,7 @@ import './FeatureCardComponent.scss';
 export default function FeatureCardComponent({Icon,Title,Content}:any) {
 return(<>
         <div className="feature-card-container">
-                <div>
+                <div aria-label='logo-image'>
                         <img 
     alt="Zero touch enrolment with Hexnode UEM" 
     loading="lazy" 

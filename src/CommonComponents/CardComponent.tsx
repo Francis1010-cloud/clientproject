@@ -11,12 +11,12 @@ const CardDesign = () =>{
     try {
         return(<>
         <div className={classname}>
-        <div className='card-header'>
+        <div className='card-header' aria-label="logo">
             {Icon && <div >
                 <img src={Icon} alt="sampleimage"/>
             </div>}
             
-            <div className='font'>      
+            <div className='font' aria-label='title'>      
                 <h2>{Title}</h2> 
             </div>
 
