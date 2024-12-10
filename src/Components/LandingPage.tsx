@@ -176,7 +176,7 @@ const HeaderSection = () =>{
             <header className='header' id="top-section">
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
-                    <div style={{width:"100px",height:"auto"}}>
+                    <div style={{width:"125px",height:"auto"}}>
                         <a href='#top-section'><img src={`./images/${headerLogoimg}`} alt="Header Logo" /></a>
                     
                 </div>

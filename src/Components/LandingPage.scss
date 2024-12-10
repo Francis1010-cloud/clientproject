@@ -96,8 +96,9 @@
             grid-template-columns: 1fr 1fr;
         }
         .email-field input{
-            padding: 15px;
+            padding: 20px;
             width: auto;
+            border-radius: 5px;
         }
         .email-field input::placeholder{
             opacity: 0.5;
@@ -436,7 +437,7 @@
         // margin-inline: 225px;
         order: 2;
    }
-   .header-section{
+   .header .header-section{
     .trail-button{
         display: none;
     }
@@ -522,4 +523,7 @@
     .header .header-content{
         padding: 100px 25px;
     }
-}
+    .header .header-section{
+        padding: 20px 26px;
+    }
+    }
