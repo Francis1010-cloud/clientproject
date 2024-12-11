@@ -177,7 +177,7 @@ const HeaderSection = () =>{
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
                     <div style={{width:"125px",height:"auto"}}>
-                        <a href='#top-section'><img src={`./images/${headerLogoimg}`} alt="Header Logo" /></a>
+                        <a href='#top-section'><img src={`${process.env.PUBLIC_URL}/images/${headerLogoimg}`} alt="Header Logo" /></a>
                     
                 </div>
                         {navbarContent.map((item:any)=>(<>
@@ -290,7 +290,7 @@ const BodySection = () =>{
                   
             </div>
             <div className="column center-icon">
-                <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo" style={{zIndex:1}}/>
+                <img src={`${process.env.PUBLIC_URL}/images/hexnode-app-icon.svg`} alt="hexnode-logo" style={{zIndex:1}}/>
             </div>
             <div 
             className="column">
