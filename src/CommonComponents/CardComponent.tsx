@@ -13,7 +13,7 @@ const CardDesign = () =>{
         <div className={classname}>
         <div className='card-header' aria-label="logo">
             {Icon && <div >
-                <img src={Icon} alt="sampleimage"/>
+                <img src={Icon} alt="Icon"/>
             </div>}
             
             <div className='font' aria-label='title'>      
