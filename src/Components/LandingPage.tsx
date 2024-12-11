@@ -72,14 +72,18 @@ export default function LandingPage() {
 
 
         const headerImage = require(`../Images/${headerLogoimg}`);
+        const sampleImage = require(`../Images/sample.svg`).default; 
+        const playSettingIcon =  require(`../Images/play-setting-icon.svg`).default; 
+        const tickIcon = require(`../Images/tick-icon.svg`).default; 
+        const fileCorrectIcon = require(`../Images/file-correct-icon.svg`).default; 
+        const hexnodeAppIcon = require(`../Images/hexnode-app-icon.svg`).default; 
+        
 
 
 useEffect(()=>{
     scrollFunction();
     watchMediaSize();
     hoverMethod();
-    console.log("headerLogoimg",headerLogoimg);
-    
 },[]);
 
 function hoverMethod(){
@@ -281,28 +285,28 @@ const BodySection = () =>{
                 <div style={{marginBottom:"70px"}}>
                 <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/sample.svg"}
+                   Icon = {sampleImage}
                    Title = {"Adapt to the new normal"}
                    Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
                   />
                 </div>
                 <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/play-setting-icon.svg"}
+                   Icon = {playSettingIcon}
                    Title = {"Get more done with automation"}
                    Content = {"Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes."}
                   />
                   
             </div>
             <div className="column center-icon">
-                <img src="./images/hexnode-app-icon.svg" alt="hexnode-logo" style={{zIndex:1}}/>
+                <img src={hexnodeAppIcon} alt="hexnode-logo" style={{zIndex:1}}/>
             </div>
             <div 
             className="column">
                 <div style={{marginBottom:"70px"}}>
                 <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/tick-icon.svg"}
+                   Icon = {tickIcon}
                    Title = {"Zero compromise security"}
                    Content = {"Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises."}
                   />
@@ -311,7 +315,7 @@ const BodySection = () =>{
                 
                    <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/file-correct-icon.svg"}
+                   Icon = {fileCorrectIcon}
                    Title = {"Unified Policy Management"}
                    Content = {"Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achive single pane of glass management with Hexnode."}
                   />
