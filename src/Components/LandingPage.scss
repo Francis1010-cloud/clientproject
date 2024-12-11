@@ -152,10 +152,10 @@
 }
 
 .body-section{
-    padding: 90px 40px;
     position: relative;
     background: rgb(247 247 247/1);
     .heading{
+        padding: 150px 40px 50px 40px;
         text-align: center;
     }
     .card-group{
@@ -508,6 +508,12 @@
     }
     .customer-container .user-card-carousal{
         margin-inline: 20px;
+    }
+    .scroll-section{
+        margin-inline: 0px;
+    }
+    .scroll-section #scroll-text{
+        animation: scroll 6s linear infinite;
     }
 
 }
