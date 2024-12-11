@@ -68,13 +68,18 @@ export default function LandingPage() {
             {  image:"https://static.hexnode.com/v2/assets/img/customer-images/chris-robinson.png",
                 content : "It seemed to be in-line with everything we were looking at.",
                 userName : "Justin Modrak",
-                description : "EEast Troy Community School District"}]
+                description : "EEast Troy Community School District"}];
+
+
+        const headerImage = require(`../Images/${headerLogoimg}`);
 
 
 useEffect(()=>{
     scrollFunction();
     watchMediaSize();
     hoverMethod();
+    console.log("headerLogoimg",headerLogoimg);
+    
 },[]);
 
 function hoverMethod(){
@@ -177,7 +182,7 @@ const HeaderSection = () =>{
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
                     <div style={{width:"125px",height:"auto"}}>
-                        <a href='#top-section'><img src={`./images/${headerLogoimg}`} alt="Header Logo" /></a>
+                        <a href='#top-section'><img src={headerImage} alt="Header Logo" /></a>
                     
                 </div>
                         {navbarContent.map((item:any)=>(<>
