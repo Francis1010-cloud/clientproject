@@ -152,10 +152,10 @@
 }
 
 .body-section{
-    padding: 90px 40px;
     position: relative;
     background: rgb(247 247 247/1);
     .heading{
+        padding: 150px 40px 50px 40px;
         text-align: center;
     }
     .card-group{
@@ -216,7 +216,7 @@
     background: rgb(247 247 247/1);
     .header-content{
         text-align: center;    
-        padding: 90px 40px;
+        padding:  150px 40px 50px 40px;
 
     }
     .platform-content{
@@ -245,7 +245,7 @@
 .customer-container{
     .header-section{
         text-align: center;
-        padding: 40px 40px;
+        padding: 110px 40px 50px 40px;
         
 
     }
@@ -356,7 +356,7 @@
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     top: 0;
     right: 0;
     background-color: white;
@@ -476,7 +476,7 @@
             grid-template-columns: 1fr;
         }
         .heading{
-            padding: 70px 50px;
+            padding: 150px 50px;
         }
     }
     .header .header-company-details{
@@ -508,6 +508,12 @@
     }
     .customer-container .user-card-carousal{
         margin-inline: 20px;
+    }
+    .scroll-section{
+        margin-inline: 0px;
+    }
+    .scroll-section #scroll-text{
+        animation: scroll 6s linear infinite;
     }
 
 }

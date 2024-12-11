@@ -68,7 +68,16 @@ export default function LandingPage() {
             {  image:"https://static.hexnode.com/v2/assets/img/customer-images/chris-robinson.png",
                 content : "It seemed to be in-line with everything we were looking at.",
                 userName : "Justin Modrak",
-                description : "EEast Troy Community School District"}]
+                description : "EEast Troy Community School District"}];
+
+
+        const headerImage = require(`../Images/${headerLogoimg}`);
+        const sampleImage = require(`../Images/sample.svg`).default; 
+        const playSettingIcon =  require(`../Images/play-setting-icon.svg`).default; 
+        const tickIcon = require(`../Images/tick-icon.svg`).default; 
+        const fileCorrectIcon = require(`../Images/file-correct-icon.svg`).default; 
+        const hexnodeAppIcon = require(`../Images/hexnode-app-icon.svg`).default; 
+        
 
 
 useEffect(()=>{
@@ -177,7 +186,7 @@ const HeaderSection = () =>{
                 <div className="header-section" id="header">
                     <div className='nav-bar'>
                     <div style={{width:"125px",height:"auto"}}>
-                        <a href='#top-section'><img src={`${process.env.PUBLIC_URL}/images/${headerLogoimg}`} alt="Header Logo" /></a>
+                        <a href='#top-section'><img src={headerImage} alt="Header Logo" /></a>
                     
                 </div>
                         {navbarContent.map((item:any)=>(<>
@@ -276,28 +285,28 @@ const BodySection = () =>{
                 <div style={{marginBottom:"70px"}}>
                 <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/sample.svg"}
+                   Icon = {sampleImage}
                    Title = {"Adapt to the new normal"}
                    Content = {"Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all."}
                   />
                 </div>
                 <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/play-setting-icon.svg"}
+                   Icon = {playSettingIcon}
                    Title = {"Get more done with automation"}
                    Content = {"Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes."}
                   />
                   
             </div>
             <div className="column center-icon">
-                <img src={`${process.env.PUBLIC_URL}/images/hexnode-app-icon.svg`} alt="hexnode-logo" style={{zIndex:1}}/>
+                <img src={hexnodeAppIcon} alt="hexnode-logo" style={{zIndex:1}}/>
             </div>
             <div 
             className="column">
                 <div style={{marginBottom:"70px"}}>
                 <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/tick-icon.svg"}
+                   Icon = {tickIcon}
                    Title = {"Zero compromise security"}
                    Content = {"Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises."}
                   />
@@ -306,7 +315,7 @@ const BodySection = () =>{
                 
                    <CardComponent 
                   classname = "card-container"
-                   Icon = {"/images/file-correct-icon.svg"}
+                   Icon = {fileCorrectIcon}
                    Title = {"Unified Policy Management"}
                    Content = {"Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achive single pane of glass management with Hexnode."}
                   />
