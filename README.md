@@ -48,12 +48,13 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## design modification
 
 some design changes has been done To enhance the user experience like scrolling company logo and etc..
+sliders,keyframes and all other functionality has been done using Html and Css only.
 
 ## no-third party library
 
 In this project no third party library were used except for icons like menu.
 
 
-## problems faced
+## challenges faced
 
 animation and other transistion without using any third-party library quite bit challenging .
