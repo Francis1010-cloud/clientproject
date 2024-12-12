@@ -3,7 +3,7 @@
     --keyframe-height : 98px;
     --keyframe-width : 200px;
     --app-color : black;
-    --app-top:39%;
+    --app-top:48%;
     --app-left:32%;
     --app-border-radius:10px;
     }
@@ -14,7 +14,7 @@
   overflow: hidden;
     left: 51%;
     top: var(--app-top);
-    height: 170px;
+    height: var(--keyframe-height);
     width: 120px;
     border-radius: var(--app-border-radius);
     position: absolute;
@@ -38,7 +38,7 @@
     overflow: hidden;
     display: block;
     position: absolute;
-    top: 57%;
+    top: 71%;
     left: var(--app-left);
     border-radius: var(--app-border-radius);
     height: var(--keyframe-height);
@@ -64,7 +64,7 @@
   .border-top-left {
     overflow: hidden;
     display: block;
-    height: 175px;
+    height: var(--keyframe-height);
     width: 200px;
     clip-path: inset(0 0 0 96px);
     top: var(--app-top);
@@ -91,7 +91,7 @@
   .border-bottom-right {
     overflow: hidden;
     display: block;
-    top: 57%;
+    top:  71%;
     left: 51%;
     position: absolute;
     height: 98px;
