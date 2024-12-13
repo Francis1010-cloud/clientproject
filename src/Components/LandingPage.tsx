@@ -447,6 +447,8 @@ const CustomerSection = () =>{
                     </div>
                     
                 </div>
+
+                <a href="Frontend_Assessment_-_2_1.pdf" download>Download the pdf</a>
         </div>
         
         </>)
